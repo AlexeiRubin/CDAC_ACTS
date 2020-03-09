@@ -1,0 +1,12 @@
+1). Program to implement COUNT SORT.
+
+2). Program to implement LINEAR SEARCH using VECTORS.
+
+3). A). Program to implement BUBBLE SORT.
+    B). Program to implement INSERTION SORT.
+    C). Program to implement MERGE SORT.
+    D). Program to implement QUICK SORT.
+
+4). Program to implement C2 - STACK as an ARRAY in same memory block.
+
+5). Program to implement CIRCULAR QUEUE as an ARRAY.
