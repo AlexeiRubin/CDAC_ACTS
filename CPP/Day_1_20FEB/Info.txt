@@ -1,5 +1,0 @@
-Q1 Functions are separate and have their own input and result is printed inside the function only.
-
-Q2 Arguments are passed to the functions and the result is returned to main.
-
-Q3 Arguments are passed to the functions and the result is returned to main. (choice of input numbers given everytime).
