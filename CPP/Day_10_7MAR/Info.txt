@@ -1,0 +1,1 @@
+1). Implement a TEMPLATE class for ARRAY to work with INTEGERS, CHARACTERS & COMPLEX.

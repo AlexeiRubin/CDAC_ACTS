@@ -1,0 +1,1 @@
+1). Implement SHAPE class hierarchy for LINE, QUADRILATERAL, POLYGON using VIRTUAL KEYWORD.
