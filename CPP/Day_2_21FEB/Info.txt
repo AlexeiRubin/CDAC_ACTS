@@ -1,0 +1,3 @@
+1). Apply QSORT on 2D strings (allocated dynamically).
+
+2). Apply QSORT	on ARRAY of STRUCTURES for individual fields (integers and strings).

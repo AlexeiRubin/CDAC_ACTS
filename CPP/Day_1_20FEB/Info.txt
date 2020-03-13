@@ -1,0 +1,7 @@
+Implement ADD, MULTIPLY, FIND MAXIMUM, FIND MINIMUM using an array of function pointers instead of using switch statement.
+
+1). Functions are separate and have their own input and result is printed inside the function only.
+
+2). Arguments are passed to the functions and the result is returned to main.
+
+3). Arguments are passed to the functions and the result is returned to main. (choice of input numbers given everytime).
