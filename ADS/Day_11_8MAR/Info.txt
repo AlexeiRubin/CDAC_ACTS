@@ -1,0 +1,8 @@
+1). Using STACK check for BALANCE OF PARAENTHESIS.
+
+2). PRIME NUMBERS using SIEVES ALGORITHM.
+ 
+3). Implement MULTIMAP <name, marks> and check if student passed or not.
+
+4). Implement SELECTION SORT.
+
