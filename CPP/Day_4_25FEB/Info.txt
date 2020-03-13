@@ -1,0 +1,5 @@
+1). Enter MxN matrix from user and print the addition result.
+
+2). Extend the above matrix to work with X number of MxN matrices.
+
+3). Implement STRCPY, STRCAT, STRCMP without using library functions.

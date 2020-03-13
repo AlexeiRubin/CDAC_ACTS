@@ -19,6 +19,7 @@ int main()
 	MyString s4("What up");
 
 	//overloaded [] operator
+	cout << s2[1] << endl;
 
 	//overloaded + operator
 	MyString s6 = s2 + s4;

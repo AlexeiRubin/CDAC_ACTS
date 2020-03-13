@@ -30,7 +30,7 @@ class MyString
 			void write();
 			
 			//overloaded [] operator
-			//MyString operator [](MyString &);
+			char operator [](int i);
 			
 			//overloaded + operator
 			MyString operator + (MyString &);

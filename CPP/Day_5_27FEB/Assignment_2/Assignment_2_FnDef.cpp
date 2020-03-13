@@ -66,6 +66,12 @@ void MyString :: write()
 }
 
 //overloaded [] operator
+char MyString :: operator [] (int i)
+{
+	cout << "\n[] Operator being Overloaded \n";
+	
+	return str[i];
+}
 
 //overloaded + operator
 MyString MyString :: operator + (MyString &s)
