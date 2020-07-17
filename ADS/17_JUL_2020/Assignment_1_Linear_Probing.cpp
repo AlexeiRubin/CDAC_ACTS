@@ -124,7 +124,7 @@ int main()
 				cout << "Element Found at Bucket ID : " << srch << endl;
 			else
 				cout << "Element NOT Found\n";
-        }
+        	}
 		else if(choice == 3)
 		{
 			ht.displayTable();
