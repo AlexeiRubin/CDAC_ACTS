@@ -172,7 +172,7 @@ int main()
 			else
 				cout << "Element NOT Found\n";
 			
-        }
+        	}
 		else if(choice == 3)
 		{
 			ht.displayTable();
