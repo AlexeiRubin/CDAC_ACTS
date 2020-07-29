@@ -1,0 +1,5 @@
+Assignment 1: Implement DFS and BFS for directed graph stored in Adjacency List.
+
+
+Assignment 2: Count number of connected components in an undirected graph.
+
