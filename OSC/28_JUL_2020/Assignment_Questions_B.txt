@@ -1,0 +1,45 @@
+Note:Many operation might not work.Analyze them
+1.	Create Three level nested directory a,b and c
+
+a)Create at least one hidden file in each directory
+b)Create at least one normal text file in each directory
+c)Copy c into a
+d)Copy file inside a into b
+
+2.	Change the third level directory c permission to read only
+
+3.	Try copying third level c directory to outside of a
+
+4.	Create the directory data inside b
+
+5.	Change the permission of b to read and write only
+
+6.	Create directory data2 inside b
+
+7.	Create data.txt file inside b
+
+8.	Rename the second level c to copied_dir
+
+9.	Change permission of copied_dir to only executable
+
+10.	Try ls on copied_dir
+
+11.	Try moving copied_dir to outside of a
+
+12.	Try moving data directory outside of a
+
+13.	Now change the owner of the directory a to root
+
+14.	Change permission of a to read write and executable to only user
+
+15.	Try creating directory sample inside a
+
+16.	Create directory x outside a
+
+17.	Try moving x inside a
+
+18.	Create directory movies
+
+19.	Change group of movies to sudo
+
+20.	Change group of movies to avahi
