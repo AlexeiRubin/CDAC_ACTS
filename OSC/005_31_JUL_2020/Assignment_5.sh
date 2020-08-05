@@ -19,7 +19,7 @@ while [ 1 ]; do
 
     case $choice in
 
-        1)	echo "Enter a string"
+        1)  echo "Enter a string"
         
             read str
     
@@ -48,7 +48,7 @@ while [ 1 ]; do
             echo "The concatenated string is : $str3"
             ;;
             
-        4)	echo "Enter the first string"
+        4)  echo "Enter the first string"
             
             read str1
             
@@ -63,7 +63,7 @@ while [ 1 ]; do
             fi
             ;;
         
-        5)	echo "Enter a string"
+        5)  echo "Enter a string"
             
             read str
             
@@ -258,24 +258,24 @@ while [ 1 ]; do
 
 	case $choice in
 	
-		1)	echo "Enter the PRN"
-			read rNo
-			flag=0
+		1)  echo "Enter the PRN"
+		    read rNo
+		    flag=0
 
-			for n in "${PRN[@]}"; do
-				if [ $rNo -eq $n ]; then
-					echo "Student Record of $rNo Exists"
-					flag=1
-					break
-				fi
-			done
-				
-			if [ $flag -eq 0  ]; then
-				echo "Enter Name and Course Name"
-				cat > studentRegistration.txt
-				PRN+=($rNo)
+		    for n in "${PRN[@]}"; do
+			if [ $rNo -eq $n ]; then
+			    echo "Student Record of $rNo Exists"
+			    flag=1
+			    break
 			fi
-			;;
+		    done
+				
+		    if [ $flag -eq 0  ]; then
+			echo "Enter Name and Course Name"
+			cat > studentRegistration.txt
+			PRN+=($rNo)
+		    fi
+		    ;;
 	esac
 	
 	if [[ $choice -eq 2 ]]; then
@@ -333,25 +333,25 @@ while [ 1 ]; do
 
 	case $choice in
 
-		1)	ip a
-			;;
+		1)  ip a
+		    ;;
 		
-		2) 	df -h
-			;;
+		2)  df -h
+		    ;;
 		
 		3)  free -h
-			;;
+		    ;;
 		
 		4)  uname -a
-			;;
+		    ;;
 		
 		5)  ls -l ~/ | grep ^-
-			;;
+		    ;;
 		
 		6)  cd /etc/
 			
-			ls *.conf
-			;;
+		    ls *.conf
+		    ;;
 	esac
 	
 	if [[ $choice -eq 7 ]]; then
@@ -378,34 +378,34 @@ while [ 1 ]; do
 
 	case $choice in
 
-		1) 	echo "Enter the Name of the Directory"
-			read dirName
-			ls $dirName
-			;;
+		1)  echo "Enter the Name of the Directory"
+		    read dirName
+		    ls $dirName
+		    ;;
 
 		2)  echo "Enter the File Name, press q to stop"
 			while read fileName && [[ "$fileName" != q ]]; do
 				touch $fileName
 			done
-			;;
+		    ;;
 
 		3)  echo "Enter Directory Name, press q to stop"
 			while read dirName && [[ "$dirName" != q ]]; do
 				mkdir $dirName
 			done
-			;;
+		    ;;
 
 		4)  echo "Enter File Name, press q to stop"
 			while read fileName && [[ "$fileName" != q ]]; do
 				rm $fileName
 			done
-			;;
+		    ;;
 
 		5)  echo "Enter Directory Name, press q to stop"
 			while read dirName && [[ "$dirName" != q ]]; do
 				rm -r $dirName
 			done
-			;;
+		    ;;
 	esac
 	
 	if [[ $choice -eq 6 ]]; then
