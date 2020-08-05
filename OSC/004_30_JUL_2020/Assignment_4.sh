@@ -101,8 +101,7 @@ echo "Enter the number"
 
 read num
 
-if [[ $((num%2)) -eq 0 ]]
-then
+if [[ $((num%2)) -eq 0 ]]; then
     echo "$num is Even"
 else
     echo "$num is Odd"
@@ -130,17 +129,14 @@ read C
 
 A)
 
-if [[ $A -gt $B ]]
-then
-    if [[ $A -gt $C ]]
-    then
+if [[ $A -gt $B ]]; then
+    if [[ $A -gt $C ]]; then
         echo "$A is the greatest"
     else
         echo "$C is the greatest"
     fi
 else
-    if [[ $B -gt $C ]]
-    then
+    if [[ $B -gt $C ]]; then
         echo "$B is the greatest"
     else
         echo "$C is the greatest"
@@ -164,17 +160,15 @@ echo "The average is : $avg"
 
 #!/bin/bash
 
-if [ ! $(($1+$2)) -gt $3 ] || [ ! $(($2+$3)) -gt $1 ] || [ ! $(($1+$3)) -gt $2 ]
-then
+if [ ! $(($1+$2)) -gt $3 ] || [ ! $(($2+$3)) -gt $1 ] || [ ! $(($1+$3)) -gt $2 ]; then
 	echo "Invalid"
-elif [ $1 -eq $2 ] && [ $2 -eq $3 ]
-then
+elif [ $1 -eq $2 ] && [ $2 -eq $3 ]; then
 	echo "Equilateral Triangle"
-elif [ $1 -eq $2 ] || [ $2 -eq $3 ] || [ $1 -eq $3 ]
-then
+elif [ $1 -eq $2 ] || [ $2 -eq $3 ] || [ $1 -eq $3 ]; then
 	echo "Isoceles Triangle"
 else
 	echo "Scalene Triangle"
+fi
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -220,36 +214,28 @@ read num
 
 case $num in
 
-    1)
-        echo "Monday"
+    1)  echo "Monday"
         ;;
     
-    2)
-        echo "Tuesday"
+    2)  echo "Tuesday"
         ;;
     
-    3)
-        echo "Wednesday"
+    3)  echo "Wednesday"
         ;;
     
-    4)
-        echo "Thursday"
+    4)  echo "Thursday"
         ;;
     
-    5)
-        echo "Friday"
+    5)  echo "Friday"
         ;;
     
-    6)
-        echo "Saturday"
+    6)  echo "Saturday"
         ;;
     
-    7)
-        echo "Sunday"
+    7)  echo "Sunday"
         ;;
         
-    *)
-        echo "Invalid Input"
+    *)  echo "Invalid Input"
         ;;
 esac
 
@@ -264,15 +250,12 @@ echo "Enter an year"
  
 read year
  
-if [[ $((year % 100)) -eq 0 ]]
-then
-	if [[ $((year % 400)) -eq 0 ]]
-	then
+if [[ $((year % 100)) -eq 0 ]]; then
+	if [[ $((year % 400)) -eq 0 ]]; then
 		echo "$year is a leap year"
 	fi
 else
-	if [[ $((year % 4)) -eq 0 ]]
-	then
+	if [[ $((year % 4)) -eq 0 ]]; then
 		echo "$year is a leap year"
 	else
 		echo "$year is NOT a leap year"
