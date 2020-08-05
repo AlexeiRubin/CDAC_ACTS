@@ -1,0 +1,46 @@
+1. Create a file data.txt
+
+2. Write data to data.txt using redirection operator
+
+3. Analyze the behaviour by writing the data to data.txt multiple times
+
+4. Append the data to data.txt
+
+5. Create data2.txt,data3.txt and data4.txt
+
+6. Write content to data2.txt,data3.txt and data4.txt using redirection operator
+
+7. Copy content of data2.txt,data3.txt and data4.txt to the data.txt
+
+8. List the files start with ‘s’ in your home directory using ls
+
+9. List all files and directories that have four characters in their name
+
+10. List all files that have any three character in starting but ends with ‘txt’ in home directory
+
+11. List all files that starts with number in your home directory
+
+12. Print HOME variable
+
+13. Print PATH variable
+
+14. Assign string to variable ‘x’. Print it using echo
+
+15. Check how many shells are in your system
+
+16. Check which shell is default shell for user
+
+17. Login on ssh server test.rebex.net (username=demo ,password=password).
+
+18. Logout from there(Use this server for 5 minutes. Its for testing purpose).
+
+19. Use scp command on your system to copy file readme.txt to your system from the test.rebex.net server.
+
+
+Optional :
+
+If you do this on your pc:
+
+1.Start ssh server using command sudo systemctl start sshd(if Its not working install openssh server using sudo apt install openssh-server)
+
+2.now you can login your using your username@localhost or username@127.0.0.1
