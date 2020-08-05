@@ -99,7 +99,6 @@ CreateDirectory()
 	else	
 		mkdir $dirName
 		echo "Directory named $dirName Created"
-		echo " "
 	fi
 }
 
