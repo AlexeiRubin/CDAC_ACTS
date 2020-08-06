@@ -41,7 +41,7 @@ SearchName()
 	read name
 	
 	for i in "${StudentName[@]}"; do
-		if [[ "$i" == "$name"  ]]; then
+		if [[ "$i" == "$name" ]]; then
 			echo "$name Found"
 			return
 		fi
@@ -196,7 +196,7 @@ sed "s/driver/DRIVER/g" switchtec.txt
 
 echo "Enter q to exit"
 
-while read quit && [ $quit != 'q'  ]; do
+while read quit && [ $quit != 'q' ]; do
 	continue
 done	
 
@@ -209,7 +209,7 @@ OPTIONAL
 
 #1. Write a shell script:
 #	a) Download https://github.com/curran/data/blob/gh-pages/all/geonames_cities10000000.csv using curl command
-#   b) print name if population is greater than 12691835
+#   	b) print name if population is greater than 12691835
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
