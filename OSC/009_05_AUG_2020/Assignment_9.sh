@@ -71,10 +71,14 @@ ps aux
 #   c) Main thread will wait for these thread to join
 
 #include<stdio.h>
+#include<stdlib.h>
 #include<pthread.h>
 
 void *printTables(void* arg)
 {	
+	int *num_ptr = (int *)arg;
+	int num = *num_ptr;
+	
 	for(int i = 1 ; i <= 10 ; ++i)
 	{
 		printf("%d * %d = %d\n", num, i, (num*i));
@@ -85,20 +89,21 @@ void *printTables(void* arg)
 
 int main(int argc, char **argv)
 {	
-	int num_args = 2;
+	int num_args = (argc - 1);
 
-	pthread_ tId[num_args];
+	pthread_t tId[num_args];
 
 	for(int i = 0 ; i < num_args ; ++i)
 	{
+		int N = atoi(argv[i]);
 		pthread_attr_t attr;
 		pthread_attr_init(&attr);
 	
-		pthread_create(&tId[i], &attr, printTables, NULL);
+		pthread_create(&tId[i], &attr, printTables, &N);
 	}
-		
+	
 	for(int i = 0 ; i < num_args ; ++i)
-		pthread_join(tid[i], NULL);
+		pthread_join(tId[i], NULL);
 }
 
 ----------------------------------------------------------------------
