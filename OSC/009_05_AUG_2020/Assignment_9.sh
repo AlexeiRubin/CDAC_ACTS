@@ -127,7 +127,7 @@ int main(int argc, int **argv)
 {
 	int num_args = 2;
 	
-	pthread_id tId[num_args];
+	pthread_t tId[num_args];
 	
 	for(int i = 0 ; i < num_args ; ++i)
 	{
@@ -140,7 +140,7 @@ int main(int argc, int **argv)
 	for(int i = 0 ; i < num_args ; ++i)
 		pthread_join(tId[i], NULL);
 	
-	printf("The value of count is : %d", count);
+	printf("The value of count is : %d\n", count);
 }
 
 ----------------------------------------------------------------------
