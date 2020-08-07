@@ -72,10 +72,10 @@ done
 while [ 1 ]; do
 	echo "Enter 1 to Update Repositories" 
 	echo "Enter 2 to Install screenfetch"
-    echo "Enter 3 to Run screenfetch"
-    echo "Enter 4 to print Favorite Movies"
-    echo "Enter 5 to Store Movies in File"
-    echo "Enter 6 to Search Movie in Movies File"
+    	echo "Enter 3 to Run screenfetch"
+    	echo "Enter 4 to print Favorite Movies"
+    	echo "Enter 5 to Store Movies in File"
+    	echo "Enter 6 to Search Movie in Movies File"
 	echo "Enter 7 to Exit"
 
 	read choice
