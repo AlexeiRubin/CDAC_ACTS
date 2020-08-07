@@ -50,7 +50,10 @@ ps aux
 #   b) List out foreground processes running in the system
 #      (ps suffix + in the state for the foreground processes)
 
+#!/bin/bash
 
+echo "Processes Running: `ps -eo pid,user,stat,comm | wc -l`"
+echo "Foreground Processes: `ps aux | grep R+ | wc -l`"
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
@@ -60,7 +63,18 @@ ps aux
 #   b) Kill process by name(use pkill)
 #   c) Kill all Terminal window 
 
+#!/bin/bash
 
+echo "Starting Browser"
+sensible-browser
+
+sleep 5
+
+echo "Killing Process by Name"
+killall -9 chrome
+
+echo "Killing all Terminal Windows"
+killall -9 `ps aux | grep gnome-terminal | awk '{print $11}'`
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------
