@@ -94,9 +94,7 @@ void *printTables(void* arg)
 	int num = *num_ptr;
 	
 	for(int i = 1 ; i <= 10 ; ++i)
-	{
 		printf("%d * %d = %d\n", num, i, (num*i));
-	}
 	
 	pthread_exit(0);
 }
@@ -107,13 +105,15 @@ int main(int argc, char **argv)
 
 	pthread_t tId[num_args];
 
+	int N[num_args];
+	
 	for(int i = 0 ; i < num_args ; ++i)
 	{
-		int N = atoi(argv[i]);
+		N[i] = atoi(argv[i]);
 		pthread_attr_t attr;
 		pthread_attr_init(&attr);
 	
-		pthread_create(&tId[i], &attr, printTables, &N);
+		pthread_create(&tId[i], &attr, printTables, &N[i]);
 	}
 	
 	for(int i = 0 ; i < num_args ; ++i)
