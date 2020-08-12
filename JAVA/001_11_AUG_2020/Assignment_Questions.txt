@@ -1,10 +1,10 @@
-1. Accept  i/ps from User , till user enters "quit" or any other option.
-   I/P : operation(add|sub|mult|div) , number1(double) , number2(double)
-   Display the result of the operation.
-
-2. Accept 2 double values from User (using Scanner). Check data type.
+1. Accept 2 double values from User (using Scanner). Check data type.
    If arguments are not doubles , supply suitable error message & terminate.
    If numbers are double values , print its average.
+   
+2. Accept  i/ps from User , till user enters "quit" or any other option.
+   I/P : operation(add|sub|mult|div) , number1(double) , number2(double)
+   Display the result of the operation.
 
 3. Display food menu to user. Assign fixed prices to food items.
    User will select items from menu along with the quantity.
