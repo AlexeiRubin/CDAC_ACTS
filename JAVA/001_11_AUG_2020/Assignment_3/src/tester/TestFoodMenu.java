@@ -1,7 +1,6 @@
 package tester;
 
 import com.app.*;
-
 import java.util.*;
 
 public class TestFoodMenu {
