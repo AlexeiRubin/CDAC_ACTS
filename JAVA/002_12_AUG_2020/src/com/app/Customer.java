@@ -8,7 +8,7 @@ class Customer {
     private int customerAge;
     private double customerCreditLimit;
              
-	//parameterized constructor
+    //parameterized constructor
     Customer(String customerName, String customerEmailId, int customerAge, double customerCreditLimit) {
         this.customerName = customerName;
         this.customerEmailId = customerEmailId;
@@ -35,19 +35,19 @@ class Customer {
     public double getCustomerCreditLimit() { return customerCreditLimit; }
              
     public void setCustomerName(String customerName) {
-		this.customerName = customerName;
-	}
+	this.customerName = customerName;
+    }
              
     public void setCustomerEmailId(String customerEmailId) {
-		this.customerEmailId = customerEmailId;
+	this.customerEmailId = customerEmailId;
     }
              
     public void setCustomerAge(int customerAge) {
-		this.customerAge = customerAge;
+	this.customerAge = customerAge;
     }
              
     public void setCustomerCreditLimit(double customerCreditLimit) {
-		this.customerCreditLimit = customerCreditLimit;
+	this.customerCreditLimit = customerCreditLimit;
     }
              
     //print customerName & customerCreditLimit only
@@ -57,6 +57,6 @@ class Customer {
              
     //overloading toString method
     public String toString() {
-		return "NAME : " + customerName + ", EMAIL ID : " + customerEmailId + ", AGE : " + customerAge + ", CREDIT LIMIT : " + customerCreditLimit;
+	return "NAME : " + customerName + ", EMAIL ID : " + customerEmailId + ", AGE : " + customerAge + ", CREDIT LIMIT : " + customerCreditLimit;
      }
 }
