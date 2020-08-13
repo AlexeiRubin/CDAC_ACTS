@@ -21,7 +21,7 @@ class Point2D {
     }
     
     public String getDetails() {
-        return "(x,y) co-ordinate pair is : ("+ x + ", " + y + ")";
+        return "(x, y) co-ordinate pair is : ("+ x + ", " + y + ")";
     }
     
     public boolean isEqual(Point2D pointObjParam) {
