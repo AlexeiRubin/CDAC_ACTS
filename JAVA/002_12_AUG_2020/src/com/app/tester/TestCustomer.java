@@ -1,6 +1,6 @@
-package tester;
+package com.app.tester;
 
-import com.app.*;
+import com.app.customer.*;
 import java.util.*;
 
 public class TestCustomer {
@@ -24,7 +24,7 @@ public class TestCustomer {
 	    System.out.println(c2 + "\n");
 	    System.out.println(c3 + "\n");
 	    
-		System.out.println("\nCustomer Name & Credit Limtit : ");
+	    System.out.println("\nCustomer Name & Credit Limtit : ");
 	    System.out.println(c1.getDetails() + "\n");
 	    System.out.println(c2.getDetails() + "\n");
 	    System.out.println(c3.getDetails() + "\n");
