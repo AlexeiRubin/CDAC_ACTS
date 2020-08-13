@@ -1,4 +1,4 @@
-package tester;
+package com.app.tester;
 
 import com.app.*;
 import java.util.*;
