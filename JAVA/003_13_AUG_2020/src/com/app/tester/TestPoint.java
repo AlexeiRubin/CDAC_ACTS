@@ -1,4 +1,4 @@
-package com.test;
+package com.app.tester;
 
 import com.app.geometry.*;
 import java.util.*;
