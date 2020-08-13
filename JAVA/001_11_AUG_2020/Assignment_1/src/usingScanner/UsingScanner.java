@@ -2,7 +2,7 @@ package usingScanner;
 
 import java.util.*;
 
-class UsingScanner {
+public class UsingScanner {
 
 	public static void main(String args[]) {
 		
