@@ -4,7 +4,7 @@ import java.lang.Math;
 
 public class Point2D {
     
-	private boolean pointExistFlag;
+    private boolean pointExistFlag;
     private double x, y;
     
     boolean getPointExistFlag() { return this.pointExistFlag; }
