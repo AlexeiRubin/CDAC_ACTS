@@ -1,0 +1,40 @@
+1.  Fresh business scenario to apply inheritance , polymorphism   to emp based organization scenario.
+
+	Create Emp based organization structure --- Emp , Mgr , Worker
+	All of above classes must be in --com.app.org
+
+	1.1 Emp state => id(int), name, deptId , basic(double)
+		Accept all of above in constructor arguments.
+		
+		BEHAVIOUR
+				1. get emp details -- override toString.
+				2. compute net salary ---ret 0
+				   (eg : public double computeNetSalary(){return 0;})
+
+	1.2 Mgr state => id,name,basic,deptId, perfBonus
+		
+		BEHAVIOUR
+				1. get mgr details :  override toString. 
+				2. compute net salary (formula: basic+perfBonus) -- override computeNetSalary
+				3. get performance bonus. --add a new method to return bonus.(getter)
+
+
+	1.3 Worker state => id,name,basic,deptId,hoursWorked,hourlyRate
+		
+		BEHAVIOUR
+				1. get worker details -- :  override toString.
+				2. compute net salary (formula:  = basic+(hoursWorked*hourlyRate) --override computeNetSalary
+				3. get hrlyRate of the worker  -- add a new method to return hourly rate of a worker.(getter)
+
+Organize classes in inheritance  hierarchy.
+
+Write TestOrganization in "tester" package.
+
+Create suitable array to store organization details.
+
+Provide following options
+
+	OPTION 1  Hire Manager
+	OPTION 2  Hire Worker  
+	OPTION 3  Display information of all employees including net salary using single for-each loop.
+	OPTION 10 Exit
