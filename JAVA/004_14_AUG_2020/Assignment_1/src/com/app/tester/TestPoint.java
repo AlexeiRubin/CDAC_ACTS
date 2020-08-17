@@ -5,7 +5,7 @@ import java.util.*;
 
 public class TestPoint {
     
-    private static Scanner in = new Scanner(System.in);
+    	private static Scanner in = new Scanner(System.in);
     
 	public static void main(String[] args) {
 		System.out.println("Enter the number of points to be plotted");
@@ -27,63 +27,63 @@ public class TestPoint {
 			
 			switch(choice) {
 				case 1 :
-						System.out.println("\nEnter the Plot Index");
-						int pointPlotIndex = in.nextInt();
+					System.out.println("\nEnter the Plot Index");
+					int pointPlotIndex = in.nextInt();
 						
-						if( (pointPlotIndex > (pointCoordinates.length - 1)) || (pointPlotIndex < 0) )
+					if( (pointPlotIndex > (pointCoordinates.length - 1)) || (pointPlotIndex < 0) )
 							System.out.println("Invalid Index");
-						else {
-							if(pointCoordinates[pointPlotIndex].isEmpty()) {
-								System.out.println("\nEnter the (x, y) co-ordinates of the New Point");
-								Point2D refObj = new Point2D(in.nextDouble(), in.nextDouble());
-								pointCoordinates[pointPlotIndex] = refObj;
-							}
-							else
-								System.out.println("\nA Point already exits on the given plot index.");
+					else {
+						if(pointCoordinates[pointPlotIndex].isEmpty()) {
+							System.out.println("\nEnter the (x, y) co-ordinates of the New Point");
+							Point2D refObj = new Point2D(in.nextDouble(), in.nextDouble());
+							pointCoordinates[pointPlotIndex] = refObj;
 						}
+						else
+							System.out.println("\nA Point already exits on the given plot index.");
+					}
 						
-						break;
+					break;
 			
 				case 2 :
-						System.out.println("\nPlotted Points are : ");
+					System.out.println("\nPlotted Points are : ");
 						
-						for(Point2D itr : pointCoordinates) {
-							if(!itr.isEmpty())
-								System.out.println(itr.getDetails());
-						}
+					for(Point2D itr : pointCoordinates) {
+						if(!itr.isEmpty())
+							System.out.println(itr.getDetails());
+					}
 						
-						break;
+					break;
 			
 				case 3 :
-						System.out.println("\nEnter the Plot Index of First Point");
-						int firstPointPlotIndex = in.nextInt();
+					System.out.println("\nEnter the Plot Index of First Point");
+					int firstPointPlotIndex = in.nextInt();
 						
-						if( (firstPointPlotIndex > (pointCoordinates.length - 1)) || (firstPointPlotIndex < 0) ) {
-							System.out.println("Invalid Index");
-							break;
-						}
-						
-						if(pointCoordinates[firstPointPlotIndex].isEmpty()) {
-							System.out.println("\nIndex has NO Plotted Point");
-							break;
-						}
-						
-						System.out.println("\nEnter the Plot Index of Second Point");
-						int secondPointPlotIndex = in.nextInt();
-						
-						if( (secondPointPlotIndex > (pointCoordinates.length - 1)) || (secondPointPlotIndex < 0) ) {
-							System.out.println("Invalid Index");
-							break;
-						}
-						
-						if(pointCoordinates[secondPointPlotIndex].isEmpty()) {
-							System.out.println("\nIndex has NO Plotted Point");
-							break;
-						}
-						
-						System.out.println("\nDistance between First Point and Second Point is : " + pointCoordinates[firstPointPlotIndex].calculateDistance(pointCoordinates[secondPointPlotIndex]) + " units");
-					
+					if( (firstPointPlotIndex > (pointCoordinates.length - 1)) || (firstPointPlotIndex < 0) ) {
+						System.out.println("Invalid Index");
 						break;
+					}
+						
+					if(pointCoordinates[firstPointPlotIndex].isEmpty()) {
+						System.out.println("\nIndex has NO Plotted Point");
+						break;
+					}
+						
+					System.out.println("\nEnter the Plot Index of Second Point");
+					int secondPointPlotIndex = in.nextInt();
+						
+					if( (secondPointPlotIndex > (pointCoordinates.length - 1)) || (secondPointPlotIndex < 0) ) {
+						System.out.println("Invalid Index");
+						break;
+					}
+						
+					if(pointCoordinates[secondPointPlotIndex].isEmpty()) {
+						System.out.println("\nIndex has NO Plotted Point");
+						break;
+					}
+						
+					System.out.println("\nDistance between First Point and Second Point is : " + pointCoordinates[firstPointPlotIndex].calculateDistance(pointCoordinates[secondPointPlotIndex]) + " units");
+					
+					break;
 			}
 		}
 	    in.close();
