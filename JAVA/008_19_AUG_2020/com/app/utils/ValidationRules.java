@@ -52,7 +52,7 @@ public class ValidationRules {
 
 	public static double CustomerRegistrationAmountValidation(double customerRegistrationAmount)
 			throws CustomerException {
-		if ((customerRegistrationAmount > 0) || ((customerRegistrationAmount % 500) == 0))
+		if ((customerRegistrationAmount > 0) && ((customerRegistrationAmount % 500) == 0))
 			return customerRegistrationAmount;
 		else
 			throw new CustomerException("INVALID REGISTRATION AMOUNT");
