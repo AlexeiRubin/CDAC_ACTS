@@ -16,13 +16,13 @@
   
 		2.	Customer type must be either SILVER or GOLD or PLATUNUM (Use String class contains method)
 		
-		3.  Customer's birth date must be after 1st Jan 1990.
+		3.  	Customer's birth date must be after 1st Jan 1990.
 			(Hint : add a static method to parse(string--->date) n validate
 			 For validation : Use java.util.Date class : before / after methods.
 
-		4.  Reg amount must be in multiples of 500.
+		4.  	Reg amount must be in multiples of 500.
 		
-		5.  Password must be min 8 chars long.
+		5.  	Password must be min 8 chars long.
 
 	In case of validation failures , throw your custom exception , which will be actually handled in main(...)
 	of Tester class.
