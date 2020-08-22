@@ -1,12 +1,12 @@
 1. Create a customer management application along with validations. 
 	
-	2.1 Customer class
+	1.1 Customer class
 		state --name,email,password,dateOfBirth(java.util.Date),custType(string),reg amount(double)
 		Add constructor n toString.
 
-	2.2 Create custom exception class(eg : CustomerHandlingException or InvalidInputException) , as a checked exception
+	1.2 Create custom exception class(eg : CustomerHandlingException or InvalidInputException) , as a checked exception
 
-	2.3 Add I/P Validation rules in utils package : ValidationRules class
+	1.3 Add I/P Validation rules in utils package : ValidationRules class
 		Add them using different public static methods(eg : validateEmail, validatePassword etc)
 		Must use exception delegation (throws)
 
@@ -39,15 +39,5 @@
 					In case of no erros , display "Customer registration successful" message.
 
 		OPTION 2.   Display all customer details (for-each)
-		
-		OPTION 3.   Customer Login
-					I/P : email & password
-					In case of success , Display "Login Successful message" + Customer details
-					In case of failure : raise custom exception . Error mesg : Invalid email or Password.
-	
-		OPTION 4.   Change Password
-					I/P : email , old password , new password
-					In case of success , Display "Password changed for " customer name.
-					In case of failure : raise custom exception . Error mesg : "Password updation failed " : Invalid email or Password.
 
 		OPTION 10.	Exit
