@@ -7,28 +7,27 @@
 
 	1.2 Add a menu , Run the application till user chooses option 10 (exit)
 
-		option 1.  Plot a new point
+		OPTION 1.  Plot a new point
 				   I/P --index , x & y
 				   eg : If user supplies 5 50 100
 				   Create a Point2D with x, y of (50,100) & its reference should be stored at the 5th index position in array.
 
-		option 2.  Display all points plotted so far. (Use for-each)
+		OPTION 2.  Display all points plotted so far. (Use for-each)
 
-
-		option 3.  Calculate distance
+		OPTION 3.  Calculate distance
 			       I/P strt , end point indexes.
 			       eg : If user enters 2 6
 			       Find out the distance between 2nd & 6th point. (array indexes start from 0)
 
-		option 10. Exit
+		OPTION 10. Exit
 
 	NOTE : Boundary condition checking & null checking is expected.
-	(Meaning : if user supplies index > array length -1 , then give error message : invalid index --out of range
-	If no point is plotted at user specified index , then give error message : invalid index -- no point plotted here.)
+	       (Meaning : if user supplies index > array length -1 , then give error message : invalid index --out of range
+	       If no point is plotted at user specified index , then give error message : invalid index -- no point plotted here.)
 
 
 2. Create java application for the following.
-   Create Student class  in package com.app.core
+   Create Student class in package com.app.core
 
 	2.1 Every student must have   --- id(int) --if possible system generated
 		(Hint : use static data member id counter : start with 1 n generate ids.), name (String), email(String), age(int),gpa.
@@ -48,16 +47,16 @@
 		Prompt user for class size(how many students ?)
 		Create suitable array.
 		
-	option 1. Admit new Student
+	OPTION 1. Admit new Student
 			  I/P student details (name,email,age)
 			  If there is a space , accept n store student details.
 			  Otherwise give error message : class capacity full!!!
 
-	option 2. Assign scores (quiz , test assignment all out of 100)
+	OPTION 2. Assign scores (quiz , test assignment all out of 100)
 			  I/P student's roll no & 3 scores
 			  O/P In case of success : scores added & GPA computed!
 			  In case of failure : invalid student id.
 
-	option 3. Display details of topper
+	OPTION 3. Display details of topper
 
-	option 4. Exit
+	OPTION 4. Exit
