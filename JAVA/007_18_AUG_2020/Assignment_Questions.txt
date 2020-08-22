@@ -10,9 +10,9 @@
 
 	1.5 From tester class (Must use dynamic method dispatch using interfaces)
 		 
-		DISPLAY MENU
-		(Note : Must use 1 switch-case only. Once user selects either fixed or growable stack ,
-		 user shouldn't be allowed to change the selection of the stack.)
+	DISPLAY MENU
+	(Note : Must use 1 switch-case only. Once user selects either fixed or growable stack ,
+	 user shouldn't be allowed to change the selection of the stack.)
 		
 		OPTION 1 Choose Fixed Stack
 		
