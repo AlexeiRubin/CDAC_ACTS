@@ -1,0 +1,13 @@
+1. Add following features in Previous assignment.
+
+	1.1	In the Tester , add options
+	
+		OPTION 3.   Customer Login
+					I/P : email & password
+					In case of success , Display "Login Successful message" + Customer details
+					In case of failure : raise custom exception . Error mesg : Invalid email or Password.
+	
+		OPTION 4.   Change Password
+					I/P : email , old password , new password
+					In case of success , Display "Password changed for " customer name.
+					In case of failure : raise custom exception . Error mesg : "Password updation failed " : Invalid email or Password.
