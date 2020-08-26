@@ -1,0 +1,8 @@
+1.  Continuation from Day 12.
+	Add following options (in eclipse project day13.1_lab)
+	
+	1.1  Sort the customers as per email using natural ordering
+	
+	1.2  Sort the customers as per DoB n customer type , using custom ordering
+	
+	1.3  Sort the customers as per DoB n shipping address's city , using custom ordering
