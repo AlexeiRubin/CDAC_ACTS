@@ -1,0 +1,16 @@
+1.  Import previous day project and apply the following changes.
+	
+	1.1 Store customer details in a HashSet .(all details )
+	
+	1.2 Add a method in CollectionUtils to create populated list of customers.
+	
+	OPTION 1 Check if a customer exits : i/p email
+	
+	OPTION 2 Display all customer details.
+	
+	OPTION 3 Remove a customer details . i/p : email
+		
+	OPTION 4 Display Customer details sorted as per email , using a TreeSet (Natural ordering)
+		
+	OPTION 5 Display Customer details sorted as per DoB n registration amount , using anonymous inner class.
+		     (add customer details with same DoB n same reg amount to observe n conclude)
