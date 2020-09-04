@@ -11,9 +11,9 @@
 
 5. DBT --> Database Technologies
 
-6. ADVJAVA --> Advanced Java
+6. AWEP --> Advanced Web Programming
 
-7. AWEP --> Advanced Web Programming
+7. ADVJAVA --> Advanced Java
 
 8. MEAN --> MongoDB - Express.js - Angular.js - Node.js
 
