@@ -295,7 +295,7 @@ SELECT ename, sal, IFNULL(comm, 1500) AS "comm" FROM emp;
 -----------------------------------
 -----------------------------------
 
---1. List the employees who are working in department 10
+--1. List the names of employees who are working in department 10
 
 SELECT ename
 	FROM emp
