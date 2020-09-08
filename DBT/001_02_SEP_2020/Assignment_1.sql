@@ -57,7 +57,7 @@ SHOW databases;
 
 -- 6. Run the script "SampleScott_Schema.sql" in your database
 
-	-- mysql "FQ_PATH_OF_THE_SCRIPT" SampleScott_Schema.sql;
+	-- source "FQ_PATH_OF_THE_SCRIPT" SampleScott_Schema.sql;
 
 -- --------------------------------------------------------------------
 -- --------------------------------------------------------------------
