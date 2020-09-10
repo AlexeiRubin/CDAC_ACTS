@@ -1348,7 +1348,7 @@ SELECT CONCAT(e.first_name, ' ', e.last_name) AS "Full Name", j.job_title, ABS(e
 -- 17.) Write a query in SQL to display the name of the country, city, and the departments which are running there.
 
 SELECT c.country_name, l.city, d.department_id
-	FROM countries AS c JOIN locations AS l ON 	c.country_id = l.country_id
+	FROM countries AS c JOIN locations AS l ON c.country_id = l.country_id
 		JOIN departments AS d ON d.location_id = l.location_id;
 
 -- o/p:
