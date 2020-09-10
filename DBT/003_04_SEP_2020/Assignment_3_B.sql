@@ -275,7 +275,7 @@ SELECT status, COUNT(*) FROM suppliers GROUP BY status;
 -- 10. Display the Status and the Count of Suppliers with that Status in the following format as shown below:- 
 
 --  Status	    Count 
--- 	 Ten		  1 
+-- 	 Ten	      1 
 -- 	 Twenty	      2 
 -- 	 Thirty	      2
 
@@ -312,8 +312,8 @@ SELECT REPLACE(
 SELECT *
 	FROM suppliers
 		WHERE status = (SELECT status
-							FROM suppliers
-								WHERE sname = 'Clark');
+					FROM suppliers
+						WHERE sname = 'Clark');
 
 -- or
 
@@ -340,8 +340,8 @@ SELECT s.*
 SELECT *
 	FROM parts
 		WHERE weight > ALL (SELECT weight
-								FROM parts
-									WHERE color = 'Red');
+					FROM parts
+						WHERE color = 'Red');
 
 -- or 
 
@@ -370,8 +370,8 @@ SELECT p.*
 SELECT *
 	FROM parts
 		WHERE weight < ALL (SELECT weight
-								FROM parts
-									WHERE color = 'Green');
+					FROM parts
+						WHERE color = 'Green');
 
 -- or
 
@@ -403,9 +403,9 @@ SELECT sname
 					FROM orders
 						GROUP BY snum
 							HAVING MAX(qty) = (SELECT MAX(maxQuantity)
-													FROM (SELECT snum, MAX(qty) AS maxQuantity
-															FROM orders
-																GROUP BY snum) AS temp));
+										FROM (SELECT snum, MAX(qty) AS maxQuantity
+											FROM orders
+												GROUP BY snum) AS temp));
 
 -- o/p:
 
@@ -429,9 +429,9 @@ SELECT sname
 					FROM orders
 						GROUP BY snum
 							HAVING SUM(qty) = (SELECT MAX(sumQuantity)
-													FROM (SELECT snum, SUM(qty) sumQuantity
-															FROM orders
-																GROUP BY snum) AS temp));
+										FROM (SELECT snum, SUM(qty) sumQuantity
+											FROM orders
+												GROUP BY snum) AS temp));
 
 -- o/p:
 
