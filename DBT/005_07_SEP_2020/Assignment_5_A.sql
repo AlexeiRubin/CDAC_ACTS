@@ -3,8 +3,8 @@
 SELECT *
 	FROM dept AS d
 		WHERE NOT EXISTS (SELECT *
-							FROM emp AS e
-								WHERE d.deptno = e.deptno);
+					FROM emp AS e
+						WHERE d.deptno = e.deptno);
 
 -- o/p:
 
@@ -50,9 +50,9 @@ SELECT ename
 SELECT ename
 	FROM emp AS e
 		WHERE EXISTS (SELECT *
-						FROM emp AS s 
-							WHERE e.mgr = s.empno
-								AND e.sal > s.sal);
+				FROM emp AS s 
+					WHERE e.mgr = s.empno
+						AND e.sal > s.sal);
 
 -- o/p:
 
@@ -71,9 +71,9 @@ SELECT ename
 SELECT ename
 	FROM emp AS e
 		WHERE EXISTS (SELECT *
-						FROM emp AS m 
-							WHERE mgr IS NULL
-								AND e.empno = m.empno);
+				FROM emp AS m 
+					WHERE mgr IS NULL
+						AND e.empno = m.empno);
 
 
 -- o/p:
