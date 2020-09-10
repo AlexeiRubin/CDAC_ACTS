@@ -290,8 +290,8 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE sal < (SELECT sal
-						FROM emp
-							WHERE ename = 'Ford');
+				FROM emp
+					WHERE ename = 'Ford');
 
 -- o/p:
 
@@ -319,8 +319,8 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE hiredate < (SELECT hiredate
-							FROM emp 
-								WHERE ename = 'Scott');
+					FROM emp 
+						WHERE ename = 'Scott');
 
 -- o/p:
 
@@ -756,8 +756,8 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE deptno IN (SELECT deptno
-							FROM emp
-								WHERE ename = 'James');
+					FROM emp
+						WHERE ename = 'James');
 
 -- o/p:
 
@@ -780,8 +780,8 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE sal <= (SELECT sal
-						FROM emp
-							WHERE ename = 'Adams');
+				FROM emp
+					WHERE ename = 'Adams');
 
 -- o/p:
 
@@ -801,8 +801,8 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE hiredate < (SELECT hiredate
-							FROM emp
-								WHERE ename = 'Ward');
+					FROM emp
+						WHERE ename = 'Ward');
 
 -- o/p:
 
@@ -821,8 +821,8 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE mgr IN (SELECT empno
-						FROM emp
-							WHERE ename = "Blake");
+				FROM emp
+					WHERE ename = "Blake");
 
 -- o/p:
 
@@ -844,8 +844,8 @@ SELECT *
  SELECT DISTINCT job
 	FROM emp
 		WHERE mgr IN (SELECT empno
-						FROM emp
-							WHERE ename = 'Blake');
+				FROM emp
+					WHERE ename = 'Blake');
 
 -- o/p:
 
@@ -864,10 +864,10 @@ SELECT *
 SELECT *
 	FROM emp
 		WHERE deptno = (SELECT deptno
-							FROM emp
-								WHERE job = (SELECT job
-												FROM emp
-													WHERE ename = 'King'));
+					FROM emp
+						WHERE job = (SELECT job
+								FROM emp
+									WHERE ename = 'King'));
 
 -- o/p:
 
@@ -978,8 +978,8 @@ SELECT ename, (YEAR(NOW()) - YEAR(hiredate)) AS "Service"
 SELECT *
 	FROM emp
 		WHERE deptno = (SELECT deptno
-							FROM dept
-								WHERE loc = 'Dallas');
+					FROM dept
+						WHERE loc = 'Dallas');
 
 -- o/p:
 
