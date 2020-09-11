@@ -2,6 +2,9 @@
 
 -- NOTE : Please do not enforce any constraints as of now
 
+CREATE DATABASE car_hire_business;
+
+USE car_hire_business;
 
 CREATE TABLE IF NOT EXISTS manufacturer
 (
