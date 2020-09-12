@@ -166,7 +166,6 @@ DESC emp8;
 ALTER TABLE emp8
 	RENAME COLUMN phone TO contact;
 	
-
 DESC emp8;
 
 -- o/p:
