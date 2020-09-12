@@ -98,8 +98,8 @@ SELECT * FROM employee;
 
 INSERT INTO employee
 	VALUES(103, 'John', '2013-01-01', 10000, 1),
-          (104, 'Bond', '2013-04-01', 12000, 2),
-          (105, 'James', '2013-05-01', 18000, 1);
+              (104, 'Bond', '2013-04-01', 12000, 2),
+              (105, 'James', '2013-05-01', 18000, 1);
 
 SELECT * FROM employee;
 
