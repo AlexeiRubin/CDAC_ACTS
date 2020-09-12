@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS prescribes
 	physician INT NOT NULL,
 	patient INT NOT NULL,
 	medication INT NOT NULL,
-	datePrescribed TIMESTAMP NOT NULL CHECK(datePrescribed <= CURRENT_TIMESTAMP()),
+	datePrescribed TIMESTAMP NOT NULL CHECK(datePrescribed <= SYSDATE()),
 	appointment INT,
 	dose VARCHAR(20),
 	PRIMARY KEY(physician, patient, medication, datePrescribed),
