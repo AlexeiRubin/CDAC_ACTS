@@ -266,10 +266,10 @@ ALTER TABLE contacts_copy RENAME TO contacts;
 		
 DELETE FROM contacts
 	WHERE id IN (SELECT id
-					FROM (SELECT id,
-							ROW_NUMBER() OVER (PARTITION BY email ORDER BY email) AS "row_num"
-								FROM contacts) AS temp
-						WHERE row_num > 1);
+			FROM (SELECT id,
+				ROW_NUMBER() OVER (PARTITION BY email ORDER BY email) AS "row_num"
+					FROM contacts) AS temp
+				WHERE row_num > 1);
 
 -- o/p:
 
