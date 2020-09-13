@@ -272,7 +272,6 @@ SELECT * FROM emp_locData;
 |         117 |            30 |  2800.00 | Seattle             | United States of America | Americas    |
 |         118 |            30 |  2600.00 | Seattle             | United States of America | Americas    |
 |         119 |            30 |  2500.00 | Seattle             | United States of America | Americas    |
-|           7 |            90 | 70070.00 | Seattle             | United States of America | Americas    |
 |         100 |            90 | 24000.00 | Seattle             | United States of America | Americas    |
 |         101 |            90 | 17000.00 | Seattle             | United States of America | Americas    |
 |         102 |            90 | 17000.00 | Seattle             | United States of America | Americas    |
@@ -383,7 +382,6 @@ SELECT * FROM emp_locData;
 +-------------+-------------+----------+-----------------+
 | employee_id | first_name  | salary   | AppraisedSalary |
 +-------------+-------------+----------+-----------------+
-|           7 | lol         | 70070.00 |      73573.5000 |
 |         100 | Steven      | 24000.00 |      25200.0000 |
 |         101 | Neena       | 17000.00 |      18020.0000 |
 |         102 | Lex         | 17000.00 |      18020.0000 |
