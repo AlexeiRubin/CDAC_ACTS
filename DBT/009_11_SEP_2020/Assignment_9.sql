@@ -2,9 +2,8 @@
 --    EmployeeId, EmployeeName, EmployeeSalary, EmployeeManager, EmployeeDepartment
 
 CREATE OR REPLACE VIEW emp_data
-	AS
-		SELECT employee_id, first_name, salary, manager_id, department_id
-			FROM employees;
+	AS SELECT employee_id, first_name, salary, manager_id, department_id
+		FROM employees;
 
 SELECT * from emp_date;
 
@@ -131,10 +130,9 @@ SELECT * from emp_date;
 --    minimum salary > 2000 and maximum salary < 5000;
 
 CREATE OR REPLACE VIEW emp_salRange
-	AS
-		SELECT *
-			FROM employees
-				WHERE salary BETWEEN 2000 AND 5000;
+	AS SELECT *
+		FROM employees
+			WHERE salary BETWEEN 2000 AND 5000;
 				
 SELECT * FROM emp_salRange;
 
@@ -203,8 +201,7 @@ SELECT * FROM emp_salRange;
 --    EMPLOYEEID,EMPLOYEENAME,EMPLOYEEDEPARTMENT,EMPLOYEESALARY,EMPLOYEECOUNTRY,EMPLOYEELOCATION, EMPLOYEEREGION.
 
 CREATE OR REPLACE VIEW emp_locData
-	AS
-	SELECT e.employee_id, e.department_id, e.salary, l.city, c.country_name, r.region_name
+	AS SELECT e.employee_id, e.department_id, e.salary, l.city, c.country_name, r.region_name
 		FROM employees AS e JOIN departments AS d ON e.department_id = d.department_id
 			JOIN locations AS l ON d.location_id = l.location_id
 				JOIN countries AS c ON l.country_id = c.country_id
@@ -337,12 +334,11 @@ SELECT * FROM emp_locData;
 
           CREATE OR REPLACE VIEW emp_locData_dept
 			AS SELECT *
-					FROM
-						emp_locData
-							WHERE department_id = 30
-								AND salary < 5000;
+				FROM emp_locData
+					WHERE department_id = 30
+						AND salary < 5000;
 								
-		  SELECT * FROM emp_locData_dept;
+	  SELECT * FROM emp_locData_dept;
 		  
 --        o/p:
 		  
@@ -371,17 +367,16 @@ SELECT * FROM emp_locData;
 --                            PEOPLE GETTING SALARY > 20001 :: 5%
 		
       CREATE OR REPLACE VIEW emp_salAppraise
-		AS
-			SELECT employee_id, first_name, salary, CASE
-					WHEN salary > 2000 AND salary <= 10000 THEN salary * 1.10
-					WHEN salary > 10001 AND salary <= 15000 THEN salary * 1.08
-					WHEN salary > 15001 AND salary <= 20000 THEN salary * 1.06
-					WHEN salary > 20001 THEN salary * 1.05
-					ELSE salary
-				END AS AppraisedSalary
-					FROM employees;
+		AS SELECT employee_id, first_name, salary, CASE
+				WHEN salary > 2000 AND salary <= 10000 THEN salary * 1.10
+				WHEN salary > 10001 AND salary <= 15000 THEN salary * 1.08
+				WHEN salary > 15001 AND salary <= 20000 THEN salary * 1.06
+				WHEN salary > 20001 THEN salary * 1.05
+				ELSE salary
+			END AS AppraisedSalary
+				FROM employees;
 					
-	  SELECT * FROM emp_salAppraise;
+      SELECT * FROM emp_salAppraise;
 	
 --    o/p:
 /*
@@ -504,11 +499,10 @@ SELECT * FROM emp_locData;
 -- 5. CREATE A VIEW ON THE EMPLOYEES TABLE WITH EMPNO , EMPNAME, EMPSALARY
 
 CREATE OR REPLACE VIEW emp_data_update
-	AS
-		SELECT employee_id, first_name, salary
-			FROM employees;
+	AS SELECT employee_id, first_name, salary
+		FROM employees;
 	
---	  (ALL DML CHANGES WILL BE MADE TO THE BASE TABLE FROM WHICH THE VIEW HAS BEEN DERIVED)
+--    (ALL DML CHANGES WILL BE MADE TO THE BASE TABLE FROM WHICH THE VIEW HAS BEEN DERIVED)
 
 --    5.1 UPDATE THE SALARY OF EMPLOYEE ID = 105;
 
@@ -516,9 +510,9 @@ CREATE OR REPLACE VIEW emp_data_update
 			SET salary = 7777
 				WHERE employee_id = 105;
 		  
-		  SELECT *
-			FROM emp_data_update
-				WHERE employee_id = 105;
+	  SELECT *
+		FROM emp_data_update
+			WHERE employee_id = 105;
 		   
 --    	  o/p:
 		  
@@ -533,12 +527,12 @@ CREATE OR REPLACE VIEW emp_data_update
 	
 --    5.2 DELETE THE ROW OF THE EMPLOYEE ID = 106;
 
-		  DELETE FROM emp_data_update
-			WHERE employee_id = 106;
+	  DELETE FROM emp_data_update
+		WHERE employee_id = 106;
 	
-		  SELECT *
-			FROM emp_data_update
-				WHERE employee_id = 106;
+	  SELECT *
+		FROM emp_data_update
+			WHERE employee_id = 106;
 				
 --    	  o/p:
 		  
@@ -550,9 +544,9 @@ CREATE OR REPLACE VIEW emp_data_update
 --    5.3 UPDATE THE EMPLOYEE DEPARTMET ID OF THE EMPLOYEEID = 108
 --        OBSERVE THE PARENT TABLE EMPLOYEES
 
-		  UPDATE emp_data_update
-			SET department_id = 90
-				WHERE employee_id = 108;
+	  UPDATE emp_data_update
+		SET department_id = 90
+			WHERE employee_id = 108;
 
 --    	  o/p:
 		  
@@ -564,43 +558,43 @@ CREATE OR REPLACE VIEW emp_data_update
 -- 6. CREATE A VIEW ON EMPLOYEES AND DEPARTMENT WITH DEPARTMENTID COMPARISON
 
 CREATE OR REPLACE VIEW emp_dept
-	AS
-	SELECT e.employee_id, e.first_name, e.salary, e.department_id
-		FROM employees AS e JOIN departments AS d ON e.department_id = d.department_id;
+	AS SELECT e.employee_id, e.first_name, e.salary, e.department_id
+		FROM employees AS e JOIN departments AS d
+			ON e.department_id = d.department_id;
 		
 --    6.1 TRY TO DO UPDATE
 
           UPDATE emp_dept
-			SET salary = 1111
-				WHERE employee_id = 105;
+		SET salary = 1111
+			WHERE employee_id = 105;
 		
-		  SELECT *
-			FROM emp_dept
-				WHERE employee_id = 105;
+	  SELECT *
+		FROM emp_dept
+			WHERE employee_id = 105;
 				
---		  o/p:
+-- 	  o/p:
 
---		  +-------------+------------+---------+---------------+
---		  | employee_id | first_name | salary  | department_id |
---		  +-------------+------------+---------+---------------+
---		  |         105 | David      | 1111.00 |            60 |
---		  +-------------+------------+---------+---------------+
+--	  +-------------+------------+---------+---------------+
+--	  | employee_id | first_name | salary  | department_id |
+--	  +-------------+------------+---------+---------------+
+--	  |         105 | David      | 1111.00 |            60 |
+--        +-------------+------------+---------+---------------+
 
           UPDATE emp_dept
-			SET department_id = 50
-				WHERE employee_id = 105;
+		SET department_id = 50
+			WHERE employee_id = 105;
 				
           SELECT *
-			FROM emp_dept
-				WHERE employee_id = 105;
+		FROM emp_dept
+			WHERE employee_id = 105;
 
---		  o/p:
+--	  o/p:
 
---		  +-------------+------------+---------+---------------+
---		  | employee_id | first_name | salary  | department_id |
---		  +-------------+------------+---------+---------------+
---		  |         105 | David      | 1111.00 |            50 |
---		  +-------------+------------+---------+---------------+
+--	  +-------------+------------+---------+---------------+
+--	  | employee_id | first_name | salary  | department_id |
+--	  +-------------+------------+---------+---------------+
+--	  |         105 | David      | 1111.00 |            50 |
+--	  +-------------+------------+---------+---------------+
 
 -- ----------------------------------------------------------------------
 -- ----------------------------------------------------------------------
