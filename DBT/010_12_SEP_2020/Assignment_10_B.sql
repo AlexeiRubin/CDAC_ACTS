@@ -11,8 +11,8 @@ BEGIN
 		FROM information_schema.tables
 			WHERE table_schema = 'scottschema'
 				AND table_name NOT IN (SELECT table_name
-										FROM information_schema.table_constraints
-											WHERE constraint_schema = 'scottschema');
+							FROM information_schema.table_constraints
+								WHERE constraint_schema = 'scottschema');
 END$$
 DELIMITER ;
 
