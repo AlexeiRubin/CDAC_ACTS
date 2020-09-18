@@ -1,0 +1,355 @@
+1.Connect to MongoDB using the console
+  (by executing the mongo command)
+
+mongo
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+2.Create a student database
+
+use student
+
+o/p:
+
+switched to db student
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+3.Connect to student database
+
+use student
+
+o/p:
+
+switched to db student
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+4.Insert following records into the "users" collection:
+
+a. user_id: "abc1", firstName: "Steve", lastName: "Haines", age: 39, gender : "M"
+b. user_id: "abc2", firstName: "Michael", lastName: "Obama", age: 25, gender : "M"
+c. user_id: "abc3",firstName: "Ram", lastName: "Das", age: 45, gender : "M"
+d. user_id: "abc4", firstName: "Chetan", lastName: "Barot", age: 30, gender : "M"
+e. user_id: "abc5", firstName: "Jaya", lastName: "Kumari", age: 35, gender : "F"
+f. user_id: "abc6", firstName: "Seeta", lastName: "Kumari", age: 22, gender : "F"
+g. user_id: "abc7", firstName: "Shiv", lastName: "Patil", age: 57, gender : "M"
+h. user_id: "abc8", firstName: "Rachna", lastName: "Sharma", age: 57, gender : "F"
+i. user_id: "abc9", firstName: "Alex", lastName: "Mathew", age: 48, gender : "M"
+j. user_id: "abc10", firstName: "Gracy", lastName: "Abreo", age: 72, gender : "F"
+k. user_id: "abc11", firstName: "Ranjan", lastName: "Patil", age: 60, gender : "M" "address":
+   { "street": "Phase1", "zipcode": "111111", "state": "LOL"}
+
+db.users.insert({user_id: "abc1", firstName: "Steve", lastName: "Haines", age: 39, gender : "M"});
+
+o/p:
+
+WriteResult({ "nInserted" : 1 })
+
+db.users.insertMany([
+	{user_id: "abc2", firstName: "Michael", lastName: "Obama", age: 25, gender : "M"},
+	{user_id: "abc3",firstName: "Ram", lastName: "Das", age: 45, gender : "M"},
+	{user_id: "abc4", firstName: "Chetan", lastName: "Barot", age: 30, gender : "M"},
+	{user_id: "abc5", firstName: "Jaya", lastName: "Kumari", age: 35, gender : "F"},
+	{user_id: "abc6", firstName: "Seeta", lastName: "Kumari", age: 22, gender : "F"},
+	{user_id: "abc7", firstName: "Shiv", lastName: "Patil", age: 57, gender : "M"},
+	{user_id: "abc8", firstName: "Rachna", lastName: "Sharma", age: 57, gender : "F"},
+	{user_id: "abc9", firstName: "Alex", lastName: "Mathew", age: 48, gender : "M"},
+	{user_id: "abc10", firstName: "Gracy", lastName: "Abreo", age: 72, gender : "F"},
+	{user_id: "abc11", firstName: "Ranjan", lastName: "Patil", age: 60, gender : "M", "address": { "street": "Phase1", "zipcode": "111111", "state": "LOL"}}
+]);
+
+o/p:
+
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value"),
+                ObjectId("12Byte BSON type value")
+        ]
+}
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+5. Display the data from the users collection
+
+db.users.find({}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc1", "firstName" : "Steve", "lastName" : "Haines", "age" : 39, "gender" : "M" }
+{ "user_id" : "abc2", "firstName" : "Michael", "lastName" : "Obama", "age" : 25, "gender" : "M" }
+{ "user_id" : "abc3", "firstName" : "Ram", "lastName" : "Das", "age" : 45, "gender" : "M" }
+{ "user_id" : "abc4", "firstName" : "Chetan", "lastName" : "Barot", "age" : 30, "gender" : "M" }
+{ "user_id" : "abc5", "firstName" : "Jaya", "lastName" : "Kumari", "age" : 35, "gender" : "F" }
+{ "user_id" : "abc6", "firstName" : "Seeta", "lastName" : "Kumari", "age" : 22, "gender" : "F" }
+{ "user_id" : "abc7", "firstName" : "Shiv", "lastName" : "Patil", "age" : 57, "gender" : "M" }
+{ "user_id" : "abc8", "firstName" : "Rachna", "lastName" : "Sharma", "age" : 57, "gender" : "F" }
+{ "user_id" : "abc9", "firstName" : "Alex", "lastName" : "Mathew", "age" : 48, "gender" : "M" }
+{ "user_id" : "abc10", "firstName" : "Gracy", "lastName" : "Abreo", "age" : 72, "gender" : "F" }
+{ "user_id" : "abc11", "firstName" : "Ranjan", "lastName" : "Patil", "age" : 60, "gender" : "M", "address" : { "street" : "Phase1", "zipcode" : "111111", "state" : "LOL" } }
+
+
+db.users.find({}, {_id : 0}).pretty();
+
+o/p:
+
+{
+        "user_id" : "abc1",
+        "firstName" : "Steve",
+        "lastName" : "Haines",
+        "age" : 39,
+        "gender" : "M"
+}
+{
+        "user_id" : "abc2",
+        "firstName" : "Michael",
+        "lastName" : "Obama",
+        "age" : 25,
+        "gender" : "M"
+}
+{
+        "user_id" : "abc3",
+        "firstName" : "Ram",
+        "lastName" : "Das",
+        "age" : 45,
+        "gender" : "M"
+}
+{
+        "user_id" : "abc4",
+        "firstName" : "Chetan",
+        "lastName" : "Barot",
+        "age" : 30,
+        "gender" : "M"
+}
+{
+        "user_id" : "abc5",
+        "firstName" : "Jaya",
+        "lastName" : "Kumari",
+        "age" : 35,
+        "gender" : "F"
+}
+{
+        "user_id" : "abc6",
+        "firstName" : "Seeta",
+        "lastName" : "Kumari",
+        "age" : 22,
+        "gender" : "F"
+}
+{
+        "user_id" : "abc7",
+        "firstName" : "Shiv",
+        "lastName" : "Patil",
+        "age" : 57,
+        "gender" : "M"
+}
+{
+        "user_id" : "abc8",
+        "firstName" : "Rachna",
+        "lastName" : "Sharma",
+        "age" : 57,
+        "gender" : "F"
+}
+{
+        "user_id" : "abc9",
+        "firstName" : "Alex",
+        "lastName" : "Mathew",
+        "age" : 48,
+        "gender" : "M"
+}
+{
+        "user_id" : "abc10",
+        "firstName" : "Gracy",
+        "lastName" : "Abreo",
+        "age" : 72,
+        "gender" : "F"
+}
+{
+        "user_id" : "abc11",
+        "firstName" : "Ranjan",
+        "lastName" : "Patil",
+        "age" : 60,
+        "gender" : "M",
+        "address" : {
+                "street" : "Phase1",
+                "zipcode" : "111111",
+                "state" : "LOL"
+        }
+}
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+6. Sort the records in ascending order of age.
+
+db.users.find({}, {_id : 0}).sort({"age" : 1});
+
+o/p:
+
+{ "user_id" : "abc6", "firstName" : "Seeta", "lastName" : "Kumari", "age" : 22, "gender" : "F" }
+{ "user_id" : "abc2", "firstName" : "Michael", "lastName" : "Obama", "age" : 25, "gender" : "M" }
+{ "user_id" : "abc4", "firstName" : "Chetan", "lastName" : "Barot", "age" : 30, "gender" : "M" }
+{ "user_id" : "abc5", "firstName" : "Jaya", "lastName" : "Kumari", "age" : 35, "gender" : "F" }
+{ "user_id" : "abc1", "firstName" : "Steve", "lastName" : "Haines", "age" : 39, "gender" : "M" }
+{ "user_id" : "abc3", "firstName" : "Ram", "lastName" : "Das", "age" : 45, "gender" : "M" }
+{ "user_id" : "abc9", "firstName" : "Alex", "lastName" : "Mathew", "age" : 48, "gender" : "M" }
+{ "user_id" : "abc7", "firstName" : "Shiv", "lastName" : "Patil", "age" : 57, "gender" : "M" }
+{ "user_id" : "abc8", "firstName" : "Rachna", "lastName" : "Sharma", "age" : 57, "gender" : "F" }
+{ "user_id" : "abc11", "firstName" : "Ranjan", "lastName" : "Patil", "age" : 60, "gender" : "M", "address" : { "street" : "Phase1", "zipcode" : "111111", "state" : "LOL" } }
+{ "user_id" : "abc10", "firstName" : "Gracy", "lastName" : "Abreo", "age" : 72, "gender" : "F" }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+7. Display the records with last name Kumari
+
+db.users.find({lastName : "Kumari"}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc5", "firstName" : "Jaya", "lastName" : "Kumari", "age" : 35, "gender" : "F" }
+{ "user_id" : "abc6", "firstName" : "Seeta", "lastName" : "Kumari", "age" : 22, "gender" : "F" }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+8. Display the records of gender Male.
+
+db.users.find({gender : "M"}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc1", "firstName" : "Steve", "lastName" : "Haines", "age" : 39, "gender" : "M" }
+{ "user_id" : "abc2", "firstName" : "Michael", "lastName" : "Obama", "age" : 25, "gender" : "M" }
+{ "user_id" : "abc3", "firstName" : "Ram", "lastName" : "Das", "age" : 45, "gender" : "M" }
+{ "user_id" : "abc4", "firstName" : "Chetan", "lastName" : "Barot", "age" : 30, "gender" : "M" }
+{ "user_id" : "abc7", "firstName" : "Shiv", "lastName" : "Patil", "age" : 57, "gender" : "M" }
+{ "user_id" : "abc9", "firstName" : "Alex", "lastName" : "Mathew", "age" : 48, "gender" : "M" }
+{ "user_id" : "abc11", "firstName" : "Ranjan", "lastName" : "Patil", "age" : 60, "gender" : "M", "address" : { "street" : "Phase1", "zipcode" : "111111", "state" : "LOL" } }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+9. Display only the first name, last name and age of users whose age is less than 30 years
+   (Display all fields except id and gender)
+
+db.users.find({age : {$lt : 30}}, {_id : 0, firstName : 1, lastName : 1, age : 1});
+
+o/p:
+
+{ "firstName" : "Michael", "lastName" : "Obama", "age" : 25 }
+{ "firstName" : "Seeta", "lastName" : "Kumari", "age" : 22 }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+10. Display the records of age greater than 30 years
+
+db.users.find({age : {$gt : 30}}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc1", "firstName" : "Steve", "lastName" : "Haines", "age" : 39, "gender" : "M" }
+{ "user_id" : "abc3", "firstName" : "Ram", "lastName" : "Das", "age" : 45, "gender" : "M" }
+{ "user_id" : "abc5", "firstName" : "Jaya", "lastName" : "Kumari", "age" : 35, "gender" : "F" }
+{ "user_id" : "abc7", "firstName" : "Shiv", "lastName" : "Patil", "age" : 57, "gender" : "M" }
+{ "user_id" : "abc8", "firstName" : "Rachna", "lastName" : "Sharma", "age" : 57, "gender" : "F" }
+{ "user_id" : "abc9", "firstName" : "Alex", "lastName" : "Mathew", "age" : 48, "gender" : "M" }
+{ "user_id" : "abc10", "firstName" : "Gracy", "lastName" : "Abreo", "age" : 72, "gender" : "F" }
+{ "user_id" : "abc11", "firstName" : "Ranjan", "lastName" : "Patil", "age" : 60, "gender" : "M", "address" : { "street" : "Phase1", "zipcode" : "111111", "state" : "LOL" } }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+11. Display the records whose age is 57 years.
+
+db.users.find({age : 57}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc7", "firstName" : "Shiv", "lastName" : "Patil", "age" : 57, "gender" : "M" }
+{ "user_id" : "abc8", "firstName" : "Rachna", "lastName" : "Sharma", "age" : 57, "gender" : "F" }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+12. Update the record of user mentioned in (j), set it’s age to 73
+
+db.users.update({user_id : "abc10"}, {$set : {age : 73}});
+
+o/p:
+
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+db.users.find({user_id : "abc10"}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc10", "firstName" : "Gracy", "lastName" : "Abreo", "age" : 73, "gender" : "F" }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+13. Update the record of user mentioned in (d), increment it’s age by 3.
+
+db.users.update({user_id : "abc3"}, {$inc : {age : 3}});
+
+o/p:
+
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+
+db.users.find({user_id : "abc3"}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc3", "firstName" : "Ram", "lastName" : "Das", "age" : 48, "gender" : "M" }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+14. Remove age from the record (i)
+
+db.users.update({user_id : "abc9"}, {$unset : {age : ""}});
+
+db.users.find({user_id : "abc9"}, {_id : 0});
+
+o/p:
+
+{ "user_id" : "abc9", "firstName" : "Alex", "lastName" : "Mathew", "gender" : "M" }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+15. Remove all the parameters for user with first name "Steve" from the record.
+
+db.users.remove({firstName : "Steve"}, {_id : 0});
+
+db.users.find();
+
+o/p:
+
+{ "user_id" : "abc2", "firstName" : "Michael", "lastName" : "Obama", "age" : 25, "gender" : "M" }
+{ "user_id" : "abc3", "firstName" : "Ram", "lastName" : "Das", "age" : 48, "gender" : "M" }
+{ "user_id" : "abc4", "firstName" : "Chetan", "lastName" : "Barot", "age" : 30, "gender" : "M" }
+{ "user_id" : "abc5", "firstName" : "Jaya", "lastName" : "Kumari", "age" : 35, "gender" : "F" }
+{ "user_id" : "abc6", "firstName" : "Seeta", "lastName" : "Kumari", "age" : 22, "gender" : "F" }
+{ "user_id" : "abc7", "firstName" : "Shiv", "lastName" : "Patil", "age" : 57, "gender" : "M" }
+{ "user_id" : "abc8", "firstName" : "Rachna", "lastName" : "Sharma", "age" : 57, "gender" : "F" }
+{ "user_id" : "abc9", "firstName" : "Alex", "lastName" : "Mathew", "gender" : "M" }
+{ "user_id" : "abc10", "firstName" : "Gracy", "lastName" : "Abreo", "age" : 73, "gender" : "F" }
+{ "user_id" : "abc11", "firstName" : "Ranjan", "lastName" : "Patil", "age" : 60, "gender" : "M", "address" : { "street" : "Phase1", "zipcode" : "111111", "state" : "LOL" } }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
