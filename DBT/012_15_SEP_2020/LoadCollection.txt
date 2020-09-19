@@ -1,0 +1,12 @@
+Import json file into database
+	- open cmd in bin folder
+	- mongoimport --db db_name --collection coll_name path/to/file.json
+
+1. Import json file
+mongoimport --db hr --collection employees employees.json
+
+2. Import json file with jsonArray
+mongoimport --db hr --collection employees employees_arr.json --jsonArray
+
+3. Export collection to json file
+mongoexport --db hr --collection employees --out employees.json
