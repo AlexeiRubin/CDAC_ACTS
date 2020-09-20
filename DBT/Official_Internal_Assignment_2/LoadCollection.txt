@@ -1,0 +1,32 @@
+Import json file into database
+
+- open cmd in bin folder inside Mongo installation directory
+- Run command: 
+	mongoimport --db db_name --collection coll_name path/to/employees.json
+
+
+
+If you are not able to import collection, create recordslike below with suitable values.
+
+{
+    "employee_id" : 103,
+    "first_name" : "Alexander",
+    "last_name" : "Hunold",
+    "email" : "AHUNOLD",
+    "hire_date" : ISODate("1990-01-03T00:00:00.000Z"),
+    "salary" : 9000,
+    "commission_pct" : NaN,
+    "manager_id" : 102,
+    "department" : {
+        "department_id" : 60,
+        "department_name" : "IT",
+        "location" : {
+            "location_id" : 1400,
+            "country_id" : "US"
+        }
+    },
+    "job" : {
+        "job_id" : "IT_PROG",
+        "job_title" : "Programmer"
+        }
+}

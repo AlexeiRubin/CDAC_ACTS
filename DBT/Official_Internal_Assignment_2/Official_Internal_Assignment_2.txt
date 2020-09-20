@@ -1,0 +1,351 @@
+DBT Official INTERNAL Assignment 2
+Date of Assignment : 20 Sept 2020
+Date of Submission : 22 Sept 2020 : 1700 PM
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+1. Display employees who joined after 1990 in descending order of hire date.
+   (2 Marks)
+
+db.employees.find({hire_date : {$gt : new Date("1990-01-01")}}, {_id : 0}).sort({hire_date : -1}).pretty();
+
+o/p:
+
+{
+        "employee_id" : 167,
+        "first_name" : "Amit",
+        "last_name" : "Banda",
+        "email" : "ABANDA",
+        "phone_number" : "011.44.1346.729268",
+        "hire_date" : ISODate("2000-04-21T00:00:00Z"),
+        "salary" : 6200,
+        "commission_pct" : 0.1,
+        "manager_id" : 147,
+        "department" : {
+                "department_id" : 80,
+                "department_name" : "Sales",
+                "location" : {
+                        "location_id" : 2500,
+                        "street_address" : "Magdalen Centre, The Oxford Science Park",
+                        "postal_code" : "OX9 9ZB",
+                        "city" : "Oxford",
+                        "state_province" : "Oxford",
+                        "country_id" : "UK"
+                }
+        },
+        "job" : {
+                "job_id" : "SA_REP",
+                "job_title" : "Sales Representative",
+                "min_salary" : 6000,
+                "max_salary" : 12000
+        }
+}
+{
+        "employee_id" : 173,
+        "first_name" : "Sundita",
+        "last_name" : "Kumar",
+        "email" : "SKUMAR",
+        "phone_number" : "011.44.1343.329268",
+        "hire_date" : ISODate("2000-04-21T00:00:00Z"),
+        "salary" : 6100,
+        "commission_pct" : 0.1,
+        "manager_id" : 148,
+        "department" : {
+                "department_id" : 80,
+                "department_name" : "Sales",
+                "location" : {
+                        "location_id" : 2500,
+                        "street_address" : "Magdalen Centre, The Oxford Science Park",
+                        "postal_code" : "OX9 9ZB",
+                        "city" : "Oxford",
+                        "state_province" : "Oxford",
+                        "country_id" : "UK"
+                }
+        },
+        "job" : {
+                "job_id" : "SA_REP",
+                "job_title" : "Sales Representative",
+                "min_salary" : 6000,
+                "max_salary" : 12000
+        }
+}
+{
+        "employee_id" : 166,
+        "first_name" : "Sundar",
+        "last_name" : "Ande",
+        "email" : "SANDE",
+        "phone_number" : "011.44.1346.629268",
+        "hire_date" : ISODate("2000-03-24T00:00:00Z"),
+        "salary" : 6400,
+        "commission_pct" : 0.1,
+        "manager_id" : 147,
+        "department" : {
+                "department_id" : 80,
+                "department_name" : "Sales",
+                "location" : {
+                        "location_id" : 2500,
+                        "street_address" : "Magdalen Centre, The Oxford Science Park",
+                        "postal_code" : "OX9 9ZB",
+                        "city" : "Oxford",
+                        "state_province" : "Oxford",
+                        "country_id" : "UK"
+                }
+        },
+        "job" : {
+                "job_id" : "SA_REP",
+                "job_title" : "Sales Representative",
+                "min_salary" : 6000,
+                "max_salary" : 12000
+        }
+}
+.......
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+2. Display employee id, department id and salary of employees working in departments with id 10,30 and 60.
+   (2 Marks)
+
+db.employees.find({"department.department_id" : {$in : [10, 30, 60]}}, {_id : 0, employee_id : 1, "department.department_id" : 1, salary : 1});
+
+o/p:
+
+{ "employee_id" : 104, "salary" : 6000, "department" : { "department_id" : 60 } }
+{ "employee_id" : 107, "salary" : 4200, "department" : { "department_id" : 60 } }
+{ "employee_id" : 103, "salary" : 9000, "department" : { "department_id" : 60 } }
+{ "employee_id" : 105, "salary" : 4800, "department" : { "department_id" : 60 } }
+{ "employee_id" : 116, "salary" : 2900, "department" : { "department_id" : 30 } }
+{ "employee_id" : 115, "salary" : 3100, "department" : { "department_id" : 30 } }
+{ "employee_id" : 114, "salary" : 11000, "department" : { "department_id" : 30 } }
+{ "employee_id" : 118, "salary" : 2600, "department" : { "department_id" : 30 } }
+{ "employee_id" : 117, "salary" : 2800, "department" : { "department_id" : 30 } }
+{ "employee_id" : 106, "salary" : 4800, "department" : { "department_id" : 60 } }
+{ "employee_id" : 119, "salary" : 2500, "department" : { "department_id" : 30 } }
+{ "employee_id" : 200, "salary" : 4400, "department" : { "department_id" : 10 } }
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+3. Display employees who are not earning any commission or have salary higher than 12000.
+   Display output in ascending order of department id and descending order of salary.
+   (2 Marks)
+
+db.employees.find({$or : [{"commission_pct.$numberDouble" : "NaN"}, {salary : {$gt : 12000}}]}, {_id : 0}).sort({"department.department_id" : 1, salary : -1}).pretty();
+
+o/p:
+
+{
+        "employee_id" : 200,
+        "first_name" : "Jennifer",
+        "last_name" : "Whalen",
+        "email" : "JWHALEN",
+        "phone_number" : "515.123.4444",
+        "hire_date" : ISODate("1987-09-17T00:00:00Z"),
+        "salary" : 4400,
+        "commission_pct" : {
+                "$numberDouble" : "NaN"
+        },
+        "manager_id" : 101,
+        "department" : {
+                "department_id" : 10,
+                "department_name" : "Administration",
+                "location" : {
+                        "location_id" : 1700,
+                        "street_address" : "2004 Charade Rd",
+                        "postal_code" : "98199",
+                        "city" : "Seattle",
+                        "state_province" : "Washington",
+                        "country_id" : "US"
+                }
+        },
+        "job" : {
+                "job_id" : "AD_ASST",
+                "job_title" : "Administration Assistant",
+                "min_salary" : 3000,
+                "max_salary" : 6000
+        }
+}
+{
+        "employee_id" : 201,
+        "first_name" : "Michael",
+        "last_name" : "Hartstein",
+        "email" : "MHARTSTE",
+        "phone_number" : "515.123.5555",
+        "hire_date" : ISODate("1996-02-17T00:00:00Z"),
+        "salary" : 13000,
+        "commission_pct" : {
+                "$numberDouble" : "NaN"
+        },
+        "manager_id" : 100,
+        "department" : {
+                "department_id" : 20,
+                "department_name" : "Marketing",
+                "location" : {
+                        "location_id" : 1800,
+                        "street_address" : "147 Spadina Ave",
+                        "postal_code" : "M5V 2L7",
+                        "city" : "Toronto",
+                        "state_province" : "Ontario",
+                        "country_id" : "CA"
+                }
+        },
+        "job" : {
+                "job_id" : "MK_MAN",
+                "job_title" : "Marketing Manager",
+                "min_salary" : 9000,
+                "max_salary" : 15000
+        }
+}
+{
+        "employee_id" : 202,
+        "first_name" : "Pat",
+        "last_name" : "Fay",
+        "email" : "PFAY",
+        "phone_number" : "603.123.6666",
+        "hire_date" : ISODate("1997-08-17T00:00:00Z"),
+        "salary" : 6000,
+        "commission_pct" : {
+                "$numberDouble" : "NaN"
+        },
+        "manager_id" : 201,
+        "department" : {
+                "department_id" : 20,
+                "department_name" : "Marketing",
+                "location" : {
+                        "location_id" : 1800,
+                        "street_address" : "147 Spadina Ave",
+                        "postal_code" : "M5V 2L7",
+                        "city" : "Toronto",
+                        "state_province" : "Ontario",
+                        "country_id" : "CA"
+                }
+        },
+        "job" : {
+                "job_id" : "MK_REP",
+                "job_title" : "Marketing Representative",
+                "min_salary" : 4000,
+                "max_salary" : 9000
+        }
+}
+.......
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+4. UK head of the company want a list of all job titles.
+   Get a list of job titles of employees who are working in UK.
+   (2 Marks)
+
+db.employees.find({"department.location.country_id" : "UK"}, {_id : 0, "job.job_title" : 1});
+
+o/p:
+
+{ "job" : { "job_title" : "Sales Manager" } }
+{ "job" : { "job_title" : "Sales Manager" } }
+{ "job" : { "job_title" : "Sales Manager" } }
+{ "job" : { "job_title" : "Sales Manager" } }
+{ "job" : { "job_title" : "Sales Manager" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+{ "job" : { "job_title" : "Sales Representative" } }
+.......
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+5. For all employees who are not earning commission, increment salary by 1000.
+   (2 Marks)
+
+db.employees.update({"commission_pct.$numberDouble" : "NaN"}, {$inc : {salary : 1000}}, {multi : true});
+
+o/p:
+
+WriteResult({ "nMatched" : 72, "nUpserted" : 0, "nModified" : 72 })
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+6. Update employee id to 210 for an employee with first name Steve and last name Rogers.
+   Ensure a new record is created if employee does not exist in collection.
+   (2 Marks)
+
+db.employees.update({$and : [{employee_id : 210}, {first_name : "Steve"}, {last_name : "Rogers"}]}, {$set : {employee_id : 210, first_name : "Steve", last_name : "Rogers"}}, {upsert : true});
+
+o/p:
+
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("12 BYTE BSON TYPE VALUE")
+})
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+7. Display employees with job title "Accountant" and salary less than 8000 or with job title "Programmer" and salary less than 5000.
+   (2 Marks)
+
+db.employees.find({$or : [{$and : [{"job.job_title" : "Accountant"}, {salary : {$lt : 8000}}]}, {$and : [{"job.job_title" : "Programmer"}, {salary : {$lt : 5000}}]}]}, {_id : 0}).pretty();
+
+o/p:
+
+{
+        "employee_id" : 113,
+        "first_name" : "Luis",
+        "last_name" : "Popp",
+        "email" : "LPOPP",
+        "phone_number" : "515.124.4567",
+        "hire_date" : ISODate("1999-12-07T00:00:00Z"),
+        "salary" : 7900,
+        "commission_pct" : {
+                "$numberDouble" : "NaN"
+        },
+        "manager_id" : 108,
+        "department" : {
+                "department_id" : 100,
+                "department_name" : "Finance",
+                "location" : {
+                        "location_id" : 1700,
+                        "street_address" : "2004 Charade Rd",
+                        "postal_code" : "98199",
+                        "city" : "Seattle",
+                        "state_province" : "Washington",
+                        "country_id" : "US"
+                }
+        },
+        "job" : {
+                "job_id" : "FI_ACCOUNT",
+                "job_title" : "Accountant",
+                "min_salary" : 4200,
+                "max_salary" : 9000
+        }
+}
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
+
+8. Drop all employee records with department id 10.
+   (1 Mark)
+
+db.employees.remove({"department.department_id" : 10});
+
+o/p:
+
+WriteResult({ "nRemoved" : 1 })
+
+----------------------------------------------------------------------
+----------------------------------------------------------------------
