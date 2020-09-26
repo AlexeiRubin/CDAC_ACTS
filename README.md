@@ -11,7 +11,7 @@
 
 5. DBT --> Database Technologies
 
-6. AWEP --> Advanced Web Programming
+6. AWP --> Advanced Web Programming
 
 7. ADVJAVA --> Advanced Java
 
