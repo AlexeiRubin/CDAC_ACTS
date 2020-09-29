@@ -1,0 +1,27 @@
+1. Create a Products array of objects in javascript
+	a) Products fields {name, price, dimension (length, height and width), weight, imagepath}
+	b) Show this dynamically with Javascript
+	c) Decorate products with CSS
+	d) Show video player (Represents your products)
+
+2. Create a Home page
+
+PHP:
+
+1. Create a login page
+	a) Decorate with CSS
+
+2. Create profile page with HTML
+	a) Decorate with CSS
+
+3. Authenticate user 
+
+4. Show profile page
+
+5. Create a Registration page
+	a) Decorate with CSS
+	b) Show registration data on Home page (Just current user)
+
+6. Create a Billing page
+	a) Ask user for three products: name, rate, quantity in input fields
+	b) Generate invoice of all given products.
