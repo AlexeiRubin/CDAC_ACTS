@@ -1,0 +1,80 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #2F3035;
+    background-image: url(../images/background-image-userlist.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1024px;
+}
+
+header {
+    height: 100px;
+    text-align: center;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0.030);
+    text-align: center;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+nav a {
+    font-size: 14px;
+    text-decoration: none;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+main {
+    height: 500px;
+    padding-top: 40px;
+}
+
+.usersContainer {
+    padding-left: 260px;
+    padding-right: 240px;
+    display: flex;
+}
+
+table {
+	width: 500px;
+	border-collapse: collapse;
+}
+
+td {
+	padding: 15px;
+    color: rgba(0, 0, 0, 0.700);
+    
+}
+
+th {
+    text-align: left;
+    padding: 12px;
+    color: rgba(0, 0, 0, 0.700);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.070);
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+a {
+    color:  rgba(0, 0, 0, 0.600);
+}
+
+footer p {
+    color: grey;
+    text-align: center;
+    font-size: 12px;
+}

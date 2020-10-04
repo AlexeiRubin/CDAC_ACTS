@@ -1,0 +1,15 @@
+PHP:
+
+1. Modify your old online shopping application
+	-Add login feature
+	-Add Registration feature (Store data in file)
+	-Add Session
+	-Add Logout
+	-Show Products names list from products.txt file (Create a page List products. Show data in table.)
+	-Show navigation bar in all page (Create one file for navigation bar)
+	-Add footer to all page (Show your copyright in footer. Create one file for footer)
+	-Decorate all pages with CSS
+
+2. Use database in online shopping (or your ecommerce app) to store user details
+
+3. Show products details from database
