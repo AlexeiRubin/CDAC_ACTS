@@ -1,0 +1,4 @@
+1. Create Registration page
+	-Use center Alignment
+	-Use input type file
+	-Use javascript to print all input fields in alert box
