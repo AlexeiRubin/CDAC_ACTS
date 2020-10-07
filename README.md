@@ -13,10 +13,10 @@
 
 6. AWP --> Advanced Web Programming
 
-7. ADVJAVA --> Advanced Java
+7. ASDM --> Advanced Software Development Methodologies
 
-8. MEAN --> MongoDB - Express.js - Angular.js - Node.js
+8. ADVJAVA --> Advanced Java
 
-9. ASDM --> Advanced Software Development Methodologies
+9. MEAN --> MongoDB - Express.js - Angular.js - Node.js
 
 10. MSNET --> Microsoft .Net
