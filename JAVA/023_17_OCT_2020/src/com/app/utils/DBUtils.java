@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class DBUtils {
 	public static Connection getDBConnection() throws ClassNotFoundException, SQLException {
 
-		String url = "jdbc:mysql://localhost:3306/employees?useSSL=false";
+		String url = "jdbc:mysql://localhost:3306/customers?useSSL=false";
 
 		Class.forName("com.mysql.cj.jdbc.Driver");
 
