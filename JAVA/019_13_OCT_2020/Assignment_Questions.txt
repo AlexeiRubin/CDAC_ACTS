@@ -1,0 +1,45 @@
+1.  Create java application called EmpService(using suitable data structure).
+    This application must provide following functionalities.
+
+	1.1 Hire New Employee: emp id(unique: string ), name, dob(LocalDate), salary and departmentId(string)
+        Ensure no duplicate emp ids.
+
+	1.2 View Employee Details: i/p id 
+        O/P emp details or error message generated via custom exception.
+
+	1.3 View Employees from a specific department, sorted by dob.
+        I/P department id.
+        Display all the employee details, from specified dept, sorted in asc order as per dob(date of birth). 
+        Use for sorting(custom ordering).
+
+	1.4 Save n Exit : Before terminating application, save all emp details in a text file(file name : emp_info.txt), using buffering.
+
+	NFR:
+    1. The application must use appropriate collection to save all the required information.
+    
+	2. Application must throw appropriate exceptions whenever necessary.
+    
+	3. Application must be created using appropriate layers.(eg : CollectionUtils ,IOUtils ,Custom exception ,core classes n tester)
+
+
+2.	Write a java application to store & restore a file of volunteers, store at least 5 such records volunteer
+               volunteerId:int,
+               vName:String,
+               Hobbies:List<String>,
+               isAvailable:Boolean,
+               DOB:LocalDate
+
+	2.1 User Should Be able to add & also update the Information of volunteers.
+    
+	2.2 Volunteer having same name and same DOB is not allowed.
+    
+	2.3 DOB of volunteer should not less than 1-1-1990 while adding new record.
+    
+	2.4 Show volunteers Who have Same Hobbies.
+    
+	2.5 Store Updated volunteer info in binary file using serialization.
+        Information should be restored using from binary file using de serialization.
+
+	NOTE:
+	If possible create separate threads one for adding the Volunteer’s information & another thread for display purpose.
+	Ensure thread safety, to avoid concurrent modification exception.
