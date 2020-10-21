@@ -15,7 +15,7 @@
 
 7. ASDM --> Advanced Software Development Methodologies
 
-8. ADVJAVA --> Advanced Java
+8. ADV_JAVA --> Advanced Java
 
 9. MEAN --> MongoDB - Express.js - Angular.js - Node.js
 
