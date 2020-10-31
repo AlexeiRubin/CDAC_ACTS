@@ -1,0 +1,47 @@
+1.  Solve Voter login using the layers 
+	Servlet--DAO (using DBUtils) --POJO --DB
+
+	1.  Tables : 
+		
+		1.1 voters table --> id (int) PK, name, email, password, status, role
+		
+			create table voters (id int primary key auto_increment,name varchar(20),
+			email varchar(20) unique,
+			password varchar(20),
+			status boolean,role varchar(20));
+			insert into voters values(default,'A','a@a.com','a#123',0,'admin');
+			insert into voters values(default,'B','b@b.com','b#123',0,'voter');
+
+		1.2 candidates table --> id (int) PK, name, political party, votes
+		
+			create table candidates(id int primary key auto_increment,
+			name varchar(20) unique,party varchar(20),votes int);
+
+			insert into candidates values(default,'R','ABC',0);
+			insert into candidates values(default,'O','DEF',0);
+			insert into candidates values(default,'T','GHI',0);
+			insert into candidates values(default,'F','JKL',0);
+			insert into candidates values(default,'L','MNO',0);
+
+	2.  POJO : Voter POJO & Candidate POJO
+
+	3.  DBUtils : same as earlier
+
+	4.  DAO i/f
+		eg : VoterDao
+		Voters authenticateVoter(String email,String pwd) throws SQLException
+
+	5.  Write DAO  Impl class (JDBC based DAO )
+		as discussed in JDBC.
+
+	6.  welcome page : login.html(post) --> LoginServlet
+
+		Override : 
+		
+		6.1 init : Create DAO instance 
+
+		6.2 doPost : invoke CRUD method of DAO
+			In case of success display voter details. 
+			Otherwise : send a link "Retry" --to take client back to login page.
+
+		6.3 destroy method : invoke Dao's cleanup.
