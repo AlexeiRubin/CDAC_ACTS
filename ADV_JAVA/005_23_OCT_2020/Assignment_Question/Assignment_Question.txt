@@ -1,0 +1,5 @@
+1.  Complete JSP assignment
+
+	1.1 Using Client Pull
+
+	1.2 Using Server Pull

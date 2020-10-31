@@ -1,0 +1,4 @@
+1. Complete admin flow of voting application.
+
+2. Monitor(display) total no of logged in users for a web site.
+   (Hint : HttpSessionListener i/f)
