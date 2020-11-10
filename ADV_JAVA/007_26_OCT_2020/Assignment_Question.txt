@@ -1,0 +1,3 @@
+1. Complete E-Voting Application adding Centralized Exception Handling in JSP and URL Rewriting.
+
+2. Create a Hibernate based standalone application, for user registration.

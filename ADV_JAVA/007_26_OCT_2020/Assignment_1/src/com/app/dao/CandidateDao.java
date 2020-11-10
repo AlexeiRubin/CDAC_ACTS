@@ -1,0 +1,17 @@
+package com.app.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import com.app.entity.Candidate;
+
+public interface CandidateDao {
+
+	List<Candidate> getCandidateList() throws SQLException;
+
+	String updateCandidateVotes(int candidateId) throws SQLException;
+
+	List<Candidate> displayTopCandidates() throws SQLException;
+
+	List<Candidate> displayPartyWiseVotes() throws SQLException;
+}
