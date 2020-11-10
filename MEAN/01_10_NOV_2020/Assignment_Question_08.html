@@ -1,0 +1,23 @@
+<!-- Write a function pow(x,y) that calculates x^y. Do not use the Math predefined object -->
+
+<html>
+<head>
+	<script>
+		function pow(x, y) {
+			var res = 1;
+			for(var i = 0 ; i < y ; ++i) {
+				res *= x;
+			}
+			return res;
+		}
+	</script>
+</head>
+	<body>
+		<script>
+			var x = parseInt(prompt("Enter the Number"));
+			var y = parseInt(prompt("Enter the Exponent"));
+			
+			document.write(pow(x, y));
+		</script>
+	</body>
+</html>

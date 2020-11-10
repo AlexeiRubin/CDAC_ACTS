@@ -1,0 +1,33 @@
+<!-- Write a program that accepts two numbers and a operator like (+,-,*, /) from user and performs
+the appropriate operation indicated by the operator. -->
+
+<html>
+<head>
+	<script>
+		var num1 = parseInt(prompt("Enter the First Number"));
+		var num2 = parseInt(prompt("Enter the Second Number"));
+		var op = prompt("Enter the Operator");
+		
+		if(op == "+") {
+			document.write(num1 + num2);
+		}
+		else if(op == "-") {
+			document.write(num1 - num2);
+		}
+		else if(op == "*") {
+			document.write(num1 * num2);
+		}
+		else {
+			if(num2 == 0) {
+				document.write("Cannot Divide by Zero");
+			}
+			else {
+				document.write(num1 / num2);
+			}
+		}
+	</script>
+</head>
+	<body>
+
+	</body>
+</html>

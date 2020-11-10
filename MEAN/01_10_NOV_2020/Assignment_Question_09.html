@@ -1,0 +1,41 @@
+<!-- Write Javascript function to find the sum and average of all passed parameters -->
+
+<html>
+<head>
+	<script>
+		var sumAndAvg = function(N, arr) {
+			
+			var res = new Array(2);
+			var sum = 0;
+			var avg = 0;
+			
+			for(var i = 0 ; i < N ; ++i) {
+				sum =+ arr[i];
+			}
+			
+			avg = (sum / N);
+			
+			res[0] = sum;
+			res[1] = avg;
+			
+			return res;
+		}
+	</script>
+</head>
+	<body>
+	<script>
+		var N = prompt("Enter the number of Elements");
+		var arr = new Array(N);
+		var res = new Array(N);
+	
+		for(var i = 0 ; i < N ; ++i) {
+			arr[i] = prompt("Enter the " + i + " element");
+		}
+		
+		res = sumAndAvg(N, arr);
+		
+		document.write("Sum is : " + res[0] + "<br>");
+		document.write("Avg is : " + res[1]);
+	</script>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!--  Write a program min() that takes any number of arguments and returns minimum number in the
+set of arguments. Do not use the Math predefined object -->
+
+<html>
+<head>
+	<script>
+		var min = function(N, arr) {
+			var min = arr[0];
+			
+			for(var i = 0 ; i < N ; ++i) {
+				if(arr[i] < min) {
+					min = arr[i];
+				}
+			}
+			return min;
+		}
+	</script>
+</head>
+	<body>
+	<script>
+		var N = prompt("Enter the number of Elements");
+		var arr = new Array(N);
+		
+		for(var i = 0 ; i < N ; ++i) {
+			arr[i] = prompt("Enter the " + i + " element");
+		}
+		document.write(min(N, arr));
+	</script>
+	</body>
+</html>

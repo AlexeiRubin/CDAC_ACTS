@@ -1,0 +1,34 @@
+<!-- Create a web page to calculate the Compound Interest -->
+
+<html>
+<head>
+	<script>
+		var ciCalc = function(p, r, n) {
+			rate = Math.pow(((r / 100) + 1), n);
+			return ((p * rate) - p);
+		}
+	</script>
+</head>
+	<body>
+		<script>
+			var p = prompt("Enter the Principal");
+			var r = prompt("Enter the Rate");
+			var n = prompt("Enter the Period");
+			
+			for(var i = 0 ; i < 72 ; ++i) {
+				document.write("-");
+			}
+			document.write("<br>*******CALCULATE COMPOUND INTEREST*******<br>");
+			
+			for(var i = 0 ; i < 72 ; ++i) {
+				document.write("-");
+			}
+			
+			document.write("<br>Principal : " + p + "<br>");
+			document.write("Rate of Interest : " + r + "<br>");
+			document.write("Period : " + n + "<br>");
+			document.write("Compound Interest : " + ciCalc(p, r, n) + "<br>");
+			
+		</script
+	</body>
+</html>

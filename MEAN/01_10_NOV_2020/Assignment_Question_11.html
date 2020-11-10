@@ -1,0 +1,29 @@
+<!-- Write a program to display Fibonacci series -->
+
+<html>
+<head>
+	<script>
+		var fib = function(N) {
+			var first = 0;
+			var second = 1;
+			var third;
+			
+			document.write(first + "<br>");
+			document.write(second + "<br>");
+			
+			for(i = 0 ; i <= N ; ++i) {
+				third = first + second;
+				first = second;
+				second = third;
+				document.write(second + "<br>");
+			}
+		}
+	</script>
+</head>
+	<body>
+		<script>
+			var N = parseInt(prompt("Enter the number of elements"));
+			fib(N);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- Write a program to find the sum of squares of even numbers upto N (accept from user). Make use
+of function -->
+
+<html>
+<head>
+	<script>
+		var evenSquareSum = function(N) {
+			var sum = 0;
+			for(var i = 2 ; i <= N ; ++i) {
+				if((i % 2 ) == 0) {
+					sum += Math.pow(i, 2);
+				}
+			}
+			return sum;
+		}
+	</script>
+</head>
+	<body>
+		<script>
+			var N = parseInt(prompt("Enter a Number"));
+			document.write(evenSquareSum(N));
+		</script>
+	</body>
+</html>

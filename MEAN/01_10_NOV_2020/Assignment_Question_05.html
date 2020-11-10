@@ -1,0 +1,21 @@
+<!-- Write a program to find sum of digits of given five-digit number. -->
+
+<html>
+<head>
+	<script>
+		var N = parseInt(prompt("Enter a number"));
+		var r = 0;
+		var sum = 0;
+		
+		while(N > 0) {
+			r = (N % 10);
+			sum += r;
+			N = Math.floor(N / 10);
+		}
+		document.write("Sum is : " + sum);
+	</script>
+</head>
+	<body>
+
+	</body>
+</html>
