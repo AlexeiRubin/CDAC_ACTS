@@ -1,0 +1,123 @@
+<!-- Create a web page that displays the current date in the format specified as in example below. Also
+as per current time, suitable greeting should be printed.
+Today is Monday, 24 April 2000, Welcome, and Good Afternoon to You.
+Number of days left till end of year : <display> -->
+
+<html>
+	<head>
+		<script>
+			var d = new Date();
+			var endDate = new Date(2021, 0, 0); 
+			
+			var day = d.getDay();
+			var dayStr;
+			switch(day) {
+				case 0:
+					dayStr = "Sunday";
+				break;
+				
+				case 1:
+					dayStr = "Monday";
+				break;
+				
+				case 2:
+					dayStr = "Tuesday";
+				break;
+				
+				case 3:
+					dayStr = "Wednesday";
+				break;
+				
+				case 4:
+					dayStr = "Thursday";
+				break;
+				
+				case 5:
+					dayStr = "Friday";
+				break;
+				
+				case 6:
+					dayStr = "Saturday";
+				break;
+			}
+			
+			var month = d.getMonth();
+			var monthStr;
+			switch(month) {
+				case 0:
+					monthStr = "January";
+				break;
+				
+				case 1:
+					monthStr = "February";
+				break;
+				
+				case 2:
+					monthStr = "March";
+				break;
+				
+				case 3:
+					monthStr = "April";
+				break;
+				
+				case 4:
+					monthStr = "May";
+				break;
+				
+				case 5:
+					monthStr = "June";
+				break;
+				
+				case 6:
+					monthStr = "July";
+				break;
+				
+				case 7:
+					monthStr = "August";
+				break;
+				
+				case 8:
+					monthStr = "September";
+				break;
+				
+				case 9:
+					monthStr = "October";
+				break;
+				
+				case 10:
+					monthStr = "November";
+				break;
+				
+				case 11:
+					monthStr = "December";
+				break;
+			}
+			
+			var hours = d.getHours();
+			var hourDayTimeStr;
+			if(hours >= 21 && hours <= 5) {
+				hourDayTimeStr = "Good Night";
+			}
+			else if(hours >= 6 && hours <= 11) {
+				hourDayTimeStr = "Good Morning";
+			}
+			else if(hours >= 12 && hours <= 17) {
+				hourDayTimeStr = "Good Afternoon";
+			}
+			else {
+				hourDayTimeStr = "Good Evening";
+			}
+			
+			var timeDifference = endDate.getTime() - d.getTime();
+			
+			var daysDifference = (timeDifference / (1000 * 3600 * 24));
+			
+			document.write("Today is " + dayStr + ", " + d.getDate() + " " + monthStr + " " + d.getFullYear() + ", Welcome, and " + hourDayTimeStr + " to You. <br>");
+			document.write("Number of days left till end of year : " + Math.floor(daysDifference));
+		</script>
+	</head>
+	
+	<body>
+	
+	</body>
+</html>

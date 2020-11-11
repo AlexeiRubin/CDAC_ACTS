@@ -1,0 +1,50 @@
+<!-- Write a function getWeekDay(date) to show the weekday in short format: ‘MO’, ‘TU’, ‘WE’, ‘TH’,
+‘FR’, ‘SA’, ‘SU’.
+Eg : let date = new Date(2012, 0, 3); // 3 Jan 2012
+alert( getWeekDay(date) ); // should output "TU" -->
+
+<html>
+	<head>
+		<script>
+			var getWeekDay = function(date) {
+			
+				switch(date.getDay()) {
+				case 0:
+					return "Sunday";
+				break;
+				
+				case 1:
+					return "Monday";
+				break;
+				
+				case 2:
+					return "Tuesday";
+				break;
+				
+				case 3:
+					return "Wednesday";
+				break;
+				
+				case 4:
+					return "Thursday";
+				break;
+					
+				case 5:
+					return "Friday";
+				break;
+				
+				case 6:
+					return "Saturday";
+				break;
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<script>
+			var date = new Date();
+			alert(getWeekDay(date));
+		</script>
+	</body>
+</html>

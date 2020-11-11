@@ -1,0 +1,25 @@
+<!-- Accept and store names of 6 employees into array and display in sorted order of names. -->
+
+<html>
+	<head>
+		<script>
+			function sortNames() {
+				var str = document.getElementById("names").value;
+				var arrNames = str.split(",");
+				
+				if(arrNames.length == 6)
+					document.getElementById("list").innerHTML = arrNames.sort();
+				else
+					document.getElementById("list").innerHTML = "Not Entered 6 names";
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h3>Enter 6 csv's as Names</h3>
+		<input type="text" id="names">
+		<input type="button" value="Sort Names List" onclick="sortNames()">
+		<br>
+		<span id="list"></span>
+	</body>
+</html>

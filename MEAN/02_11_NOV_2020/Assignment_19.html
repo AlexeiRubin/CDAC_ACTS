@@ -1,0 +1,65 @@
+<!-- Create an array that holds 4 employee objects and displays each emp detail in a table. Emp details
+could be empid, empname and salary. Use for each loop to inspect all properties of each object -->
+
+<html>
+	<head>
+		<script>
+			var empList = [
+				{
+					"empId" : "7",
+					"empName" : "lol",
+					"empSalary" : "7"
+				},
+				{
+					"empId" : "07",
+					"empName" : "lmao",
+					"empSalary" : "77"
+				},
+				{
+					"empId" : "007",
+					"empName" : "rofl",
+					"empSalary" : "777"
+				},
+				{
+					"empId" : "0007",
+					"empName" : "haha",
+					"empSalary" : "7777"
+				}	
+			];
+		</script>
+	</head>
+	
+	<body>
+		<table id="empInfoTable">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>NAME</th>
+					<th>SALARY</th>
+				</tr>
+			</thead>
+			<tbody id="testBody"></tbody>
+		</table>
+		
+		<script>
+			function loadTableData(empList) {
+				var table = document.getElementById("empInfoTable");
+				
+				empList.forEach(emp => {
+				  var row = table.insertRow();
+				  
+				  var ID = row.insertCell(0);
+				  ID.innerHTML = emp.empId;
+				  
+				  var NAME = row.insertCell(1);
+				  NAME.innerHTML = emp.empName;
+				  
+				  var SALARY = row.insertCell(2);
+				  SALARY.innerHTML = emp.empSalary;
+				});
+			}
+			
+			loadTableData(empList);
+		</script>
+	</body>
+</html>
