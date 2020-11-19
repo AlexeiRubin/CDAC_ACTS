@@ -1,0 +1,68 @@
+<!-- 
+Payment calculator
+Create a following web page and calculate Payment Information based on Loan Information.
+Validate Loan information textfields for numbers and Payment Information textfields should be uneditable.
+The other constraints are as follows :
+	Amount of Loan should not be more than 15 lakhs.
+	Repayment period should be between 7 yrs to 15 yrs.
+-->
+
+<html>
+	<head>
+		<script>
+			function validate() {
+				var loan = parseInt(document.getElementById("loanAmount").value);
+				
+				if(loan == null || isNaN(loan)) {
+					alert("Loan Amount cannot be null or not a number");
+					return false;
+				}
+				
+				if(loan >= 1500000)
+					alert("Loan Amount should be less than 15,00,000");
+				
+				var roi = parseInt(document.getElementById("annualROI").value);
+				
+				if(roi == null || isNaN(roi)) {
+					alert("Annual ROI cannot be null or not a number");
+					return false;
+				}
+				
+				var time = parseInt(document.getElementById("period").value);
+				
+				if(time < 7 || time > 15)
+					alert("Time Period should be between 7 & 15 years");
+					
+				if(time == null || isNaN(time)) {
+					alert("Time Period cannot be null or not a number");
+					return false;
+				}
+				calculatePayment();
+			}
+			
+			function calculatePayment() {
+				var loan = parseInt(document.getElementById("loanAmount").value);
+				var roi = parseInt(document.getElementById("annualROI").value);
+				var time = parseInt(document.getElementById("period").value);
+				
+				document.getElementById("monthly").value = loan;
+				document.getElementById("total").value = roi;
+				document.getElementById("totalInterest").value = time;
+			}
+		</script>
+	</head>
+	
+	<body>
+		<h4>Enter Loan Information : </h4>
+		<input type="text" id="loanAmount" placeholder="Amount of Loan"><br>
+		<input type="text" id="annualROI" placeholder="Annual Percentage ROI"><br>
+		<input type="text" id="period" placeholder="Repayment Period (Yrs.)"><br>
+		<br><input type="button" value="Compute" onclick="return validate()"><br>
+		
+		<h4>Payment Information : </h4>
+		<input type="text" id="monthly" value="" placeholder="Monthly Payment" readonly><br>
+		<input type="text" id="total" value="" placeholder="Total Payment" readonly><br>
+		<input type="text" id="totalInterest" value="" placeholder="Total Interests Payment" readonly>
+		
+	</body>
+</html>

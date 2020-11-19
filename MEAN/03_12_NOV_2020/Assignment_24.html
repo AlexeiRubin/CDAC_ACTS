@@ -1,0 +1,23 @@
+<!--
+Assume an array of member names.
+Read the array and display all member names as a string delimited by comma all in uppercase.
+-->
+
+<html>
+	<head>
+		
+	</head>
+	
+	<body>
+		<span id="arrayNames"></span>
+		<script>
+			var names = new Array("lol", "lmao", "rotfl", "haha", "hehe");
+			
+			names.forEach(displayNames);
+			
+			function displayNames(item) {
+				document.getElementById("arrayNames").innerHTML += item.toUpperCase() + ", ";
+			}
+		</script>
+	</body>
+</html>

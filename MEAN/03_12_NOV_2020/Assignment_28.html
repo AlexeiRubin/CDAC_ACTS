@@ -1,0 +1,35 @@
+<!--
+Create a Login.html page that accepts username and password. Following are the validations required:
+	Both fields are mandatory
+	Username must be between 6 to 10 characters, all alphabetic.
+	Password should be greater than 8 characters, must contain a # and atleast one digit.
+-->
+
+<html>
+	<head>
+		<script>
+			var re_username = /[a-zA-Z].{6,10}/;
+			var re_password = /(?=.*\w)(?=.*\d)(?=.*[#]).{8,}/;
+			
+			function validate() {
+				var username = document.getElementById("username").value;
+				var password = document.getElementById("password").value;
+				
+				if(re_username.test(username) && re_password.test(password)) {
+						alert("Login Successful");
+						return true;
+				}
+				else {
+					alert("Ivalid Uesrname or Password");
+					return false;
+				}
+			}
+		</script>
+	</head>
+		<input type="text" id="username" placeholder="Username"><br>
+		<input type="password" id="password" placeholder="Password"><br>
+		<input type="button" value="Login" onclick="return validate()">
+	<body>
+	
+	</body>
+</html>

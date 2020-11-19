@@ -1,0 +1,40 @@
+<!--
+Assume we have this content in HTML body
+<body>
+	<h3> Members of my Group are </h3>
+		<ol id="list">
+		</ol>
+</body>
+
+Also assume we have a array of person names (5 names).
+Read from array and populate the above list with member names in bullet form.
+-->
+
+<html>
+	<head>
+	
+	</head>
+	
+	<body>
+		<h3> Members of my Group are :</h3>
+			<ol id="list">
+			</ol>
+			<button value="" onclick="appendNamesToList()">Fill List</button>
+		<script>
+			var names = new Array("lol", "lmao", "rotfl", "haha", "hehe");
+			
+			function appendNamesToList() {
+				var itr = 0;
+				while(itr != names.length) {
+					var element = document.createElement("li");
+					var value = document.createTextNode(names[itr]);
+					
+					element.appendChild(value);
+					document.getElementById("list").appendChild(element);
+					
+					++itr;
+				}
+			}
+		</script>
+	</body>
+</html>

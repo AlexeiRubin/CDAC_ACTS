@@ -1,0 +1,33 @@
+<!-- Create a HTML form that accepts start and end values and displays multiplication table -->
+
+<html>
+	<head>
+		<script>
+			function multiplicationTable() {
+				var startVal = parseInt(document.getElementById("startValue").value);
+				var endVal = parseInt(document.getElementById("endValue").value);
+				var fact = parseInt(document.getElementById("factor").value);
+				
+				var res = "";
+				for(var i = startVal ; i <= endVal ; ++i) {
+					res = i + " times " + fact + " = " + (i * fact);
+					document.getElementById("resultTable").innerHTML += res + " <br>";
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<form>
+			<input type="text" id="startValue" placeholder="Start Value">
+			<input type="text" id="endValue" placeholder="End Value">
+			<input type="text" id="factor" placeholder="Multiply By">
+			<br>
+			<input type="button" value="Times Table" onclick="multiplicationTable()">
+			<br>
+			<input type="reset" value="Reset">
+			<br>
+		</form>
+		<span id="resultTable"></span>
+	</body>
+</html>

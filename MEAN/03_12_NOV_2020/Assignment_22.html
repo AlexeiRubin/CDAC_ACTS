@@ -1,0 +1,80 @@
+<!--
+Create the HTML form given below. Use JS to manipulate strings. Display the output below the button 
+	1st radio button : search the given sub string (second text box) in main string (first text box)
+	2nd & 3rd radio button: convert one of the strings to upper/lower case
+	4th radio button : trim spaces around first string
+	5th radio button : concatenate strings in first and 2nd text boxes
+	6th radio button : do as shown
+-->
+
+<html>
+	<head>
+		<script>
+			function stringOperations() {
+				var str = document.getElementById("string").value;
+				var subStr = document.getElementById("subString").value;
+				var replStr = document.getElementById("replaceString").value;
+				var radioVals = document.getElementsByName("strOps");
+				
+				for(var i = 0 ; i < radioVals.length ; ++i) {
+					if(radioVals[i].checked) {
+						var radioValue = parseInt(radioVals[i].value);
+						switch(radioValue) {
+							case 1:
+								document.getElementById("result").innerHTML = str.includes(subStr);
+							break;
+							
+							case 2:
+								document.getElementById("result").innerHTML = str.toUpperCase();
+							break;
+							
+							case 3:
+								document.getElementById("result").innerHTML = str.toLowerCase();
+							break;
+							
+							case 4:
+								document.getElementById("result").innerHTML = str.trim();
+							break;
+							
+							case 5:
+								document.getElementById("result").innerHTML = str.concat(subStr);
+							break;
+							
+							case 6:
+								document.getElementById("result").innerHTML = str.replace(str, replStr);
+							break;
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<input type="text" id="string" placeholder="Enter String">
+		<input type="text" id="subString" placeholder="Enter Sub String">
+		<input type="text" id="replaceString" placeholder="Replace String With"><br>
+		
+		<input type="radio" id="search" name="strOps" value="1">
+			<label for="search">Search Substring in Main String</label><br>
+		
+		<input type="radio" id="upper" name="strOps" value="2">
+			<label for="search">To UpperCase</label><br>
+		
+		<input type="radio" id="lower" name="strOps" value="3">
+			<label for="search">To LowerCase</label><br>
+		
+		<input type="radio" id="trim" name="strOps" value="4">
+			<label for="search">Trim Spaces</label><br>
+		
+		<input type="radio" id="concat" name="strOps" value="5">
+			<label for="search">Concatenate</label><br>
+		
+		<input type="radio" id="replace" name="strOps" value="6">
+			<label for="search">Replace</label><br>
+		
+		<input type="button" value="Submit Query" onclick="stringOperations()"><br>
+		
+		<span id="result"></span>
+	</body>
+</html>
