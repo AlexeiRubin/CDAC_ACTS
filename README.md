@@ -19,4 +19,4 @@
 
 9. MEAN --> MongoDB - Express.js - Angular.js - Node.js
 
-10. MSNET --> Microsoft .Net
+10. MSDN --> Microsoft .Net
