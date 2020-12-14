@@ -1,0 +1,31 @@
+﻿@model Assignment_2.ViewModel.EmployeeDetails
+
+@{
+    ViewBag.Title = "GetEmployeeDetails";
+}
+
+<h2>GetEmployeeDetails</h2>
+
+<head>
+    <title>Title : @Model.PageTitle</title>
+</head>
+
+<body>
+    <h2>Header : @Model.PageHeader</h2>
+
+    <h4>Employee</h4>
+    <div>
+        Id : @Model.Employee.Id <br />
+        Name : @Model.Employee.Name <br />
+        Gender : @Model.Employee.Gender <br />
+        Department : @Model.Employee.Department
+    </div>
+
+    <h4>Address</h4>
+    <div>
+        City : @Model.Address.City <br />
+        State : @Model.Address.State <br />
+        PIN : @Model.Address.Pin <br />
+        Country :@Model.Address.Country
+    </div>
+</body>

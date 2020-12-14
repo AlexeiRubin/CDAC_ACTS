@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>-- 09 DEC 2020 -- Assignment_2 --</h2>
+
+@helper Addition(int a, int b)
+{
+    <label>@a + @b = @(a + b)</label>
+}
+
+@helper Subtraction(int a, int b)
+{
+    <label>@a - @b = @(a - b)</label>
+}
+
+@helper Multiplication(int a, int b)
+{
+    <label>@a * @b = @(a * b)</label>
+}
+
+@helper Division(int a, int b)
+{
+    <label>@a / @b = @(a / b)</label>
+}
+
+<div>
+    <label>@Addition(7, 7)</label>
+</div>
+
+<div>
+    <label>@Subtraction(7, 7)</label>
+</div>
+
+<div>
+    <label>@Multiplication(7, 7)</label>
+</div>
+
+<div>
+    <label>@Division(7, 7)</label>
+</div>
